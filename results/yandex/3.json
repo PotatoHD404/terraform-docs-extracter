@@ -1,0 +1,4390 @@
+{
+    "provider.yandex.token": [
+        "auth_token_here",
+        "your YC_TOKEN",
+        "<iam-token>"
+    ],
+    "provider.yandex.service_account_key_file": [
+        "path_to_service_account_key_file"
+    ],
+    "provider.yandex.cloud_id": [
+        "cloud_id_here"
+    ],
+    "provider.yandex.folder_id": [
+        "folder_id_here",
+        "your folder id",
+        "local.folder_id",
+        "<folder-id>"
+    ],
+    "provider.yandex.zone": [
+        "ru-central1-a",
+        "your default zone"
+    ],
+    "data.yandex_alb_backend_group.foo.backend_group_id": [
+        "my-backend-group-id"
+    ],
+    "data.yandex_alb_http_router.tf-router.http_router_id": [
+        "my-http-router-id"
+    ],
+    "data.yandex_alb_load_balancer.tf-alb-data.load_balancer_id": [
+        "my-alb-id"
+    ],
+    "data.yandex_alb_target_group.foo.target_group_id": [
+        "my-target-group-id"
+    ],
+    "data.yandex_alb_virtual_host.my-vh-data.name": [
+        "yandex_alb_virtual_host.my-vh.name"
+    ],
+    "data.yandex_alb_virtual_host.my-vh-data.http_router_id": [
+        "yandex_alb_virtual_host.my-router.id"
+    ],
+    "data.yandex_api_gateway.my-api-gateway.name": [
+        "my-api-gateway"
+    ],
+    "data.yandex_billing_cloud_binding.foo.billing_account_id": [
+        "foo-ba-id"
+    ],
+    "data.yandex_billing_cloud_binding.foo.cloud_id": [
+        "foo-cloud-id"
+    ],
+    "output.bound_cloud_id.value": [
+        "${data.yandex_billing_cloud_binding.foo.cloud_id}"
+    ],
+    "data.yandex_cdn_origin_group.my_group.origin_group_id": [
+        "some_instance_id"
+    ],
+    "output.origin_group_name.value": [
+        "${data.yandex_cdn_origin_group.my_group.name}"
+    ],
+    "data.yandex_cdn_resource.my_resource.resource_id": [
+        "some resource id"
+    ],
+    "output.resource_cname.value": [
+        "${data.yandex_cdn_resource.my_resource.cname}"
+    ],
+    "data.yandex_kubernetes_cluster.kubernetes.name": [
+        "kubernetes"
+    ],
+    "provider.kubernetes.load_config_file": [
+        false
+    ],
+    "provider.kubernetes.host": [
+        "data.yandex_kubernetes_cluster.kubernetes.master.0.external_v4_endpoint"
+    ],
+    "provider.kubernetes.cluster_ca_certificate": [
+        "data.yandex_kubernetes_cluster.kubernetes.master.0.cluster_ca_certificate"
+    ],
+    "provider.kubernetes.token": [
+        "data.yandex_client_config.client.iam_token"
+    ],
+    "data.yandex_cm_certificate.example_by_id.certificate_id": [
+        "certificate-id"
+    ],
+    "data.yandex_cm_certificate.example_by_name.folder_id": [
+        "folder-id"
+    ],
+    "data.yandex_cm_certificate.example_by_name.name": [
+        "example"
+    ],
+    "resource.yandex_cm_certificate.example.name": [
+        "example"
+    ],
+    "resource.yandex_cm_certificate.example.domains[0]": [
+        "example.com",
+        "one.example.com"
+    ],
+    "resource.yandex_cm_certificate.example.domains[1]": [
+        "*.example.com",
+        "two.example.com"
+    ],
+    "resource.yandex_cm_certificate.example.managed.challenge_type": [
+        "DNS_CNAME"
+    ],
+    "resource.yandex_cm_certificate.example.managed.challenge_count": [
+        1,
+        2
+    ],
+    "resource.yandex_dns_recordset.example.count": [
+        "yandex_cm_certificate.example.managed[0].challenge_count"
+    ],
+    "resource.yandex_dns_recordset.example.zone_id": [
+        "example-zone-id"
+    ],
+    "resource.yandex_dns_recordset.example.name": [
+        "yandex_cm_certificate.example.challenges[count.index].dns_name"
+    ],
+    "resource.yandex_dns_recordset.example.type": [
+        "yandex_cm_certificate.example.challenges[count.index].dns_type"
+    ],
+    "resource.yandex_dns_recordset.example.data[0]": [
+        "yandex_cm_certificate.example.challenges[count.index].dns_value"
+    ],
+    "resource.yandex_dns_recordset.example.ttl": [
+        60
+    ],
+    "data.yandex_cm_certificate.example.depends_on[0]": [
+        "yandex_dns_recordset.example"
+    ],
+    "data.yandex_cm_certificate.example.certificate_id": [
+        "yandex_cm_certificate.example.id"
+    ],
+    "data.yandex_cm_certificate.example.wait_validation": [
+        true
+    ],
+    "data.yandex_cm_certificate_content.example_by_id.certificate_id": [
+        "certificate-id"
+    ],
+    "data.yandex_cm_certificate_content.example_by_name.folder_id": [
+        "folder-id"
+    ],
+    "data.yandex_cm_certificate_content.example_by_name.name": [
+        "example"
+    ],
+    "data.yandex_compute_disk.my_disk.disk_id": [
+        "some_disk_id"
+    ],
+    "resource.yandex_compute_instance.default.secondary_disk.disk_id": [
+        "${data.yandex_compute_disk.my_disk.id}"
+    ],
+    "data.yandex_compute_disk_placement_group.my_group.group_id": [
+        "some_group_id"
+    ],
+    "output.placement_group_name.value": [
+        "${data.yandex_compute_disk_placement_group.my_group.name}",
+        "${data.yandex_compute_placement_group.my_group.name}"
+    ],
+    "data.yandex_compute_filesystem.my_fs.filesystem_id": [
+        "some_fs_id"
+    ],
+    "resource.yandex_compute_instance.default.filesystem.filesystem_id": [
+        "${data.yandex_compute_filesystem.my_fs.id}"
+    ],
+    "data.yandex_compute_gpu_cluster.my_gpu_cluster.gpu_cluster_id": [
+        "some_gpu_cluster_id"
+    ],
+    "resource.yandex_compute_instance.default.gpu_cluster_id": [
+        "data.yandex_compute_gpu_cluster.my_gpu_cluster.id"
+    ],
+    "data.yandex_compute_instance.my_instance.instance_id": [
+        "some_instance_id"
+    ],
+    "output.instance_external_ip.value": [
+        "${data.yandex_compute_instance.my_instance.network_interface.0.nat_ip_address}",
+        "${data.yandex_compute_instance_group.my_group.instances.*.network_interface.0.nat_ip_address}"
+    ],
+    "data.yandex_compute_instance_group.my_group.instance_group_id": [
+        "some_instance_group_id"
+    ],
+    "data.yandex_compute_placement_group.my_group.group_id": [
+        "some_group_id"
+    ],
+    "data.yandex_compute_snapshot.my_snapshot.snapshot_id": [
+        "some_snapshot_id"
+    ],
+    "resource.yandex_compute_instance.default.boot_disk.initialize_params.snapshot_id": [
+        "${data.yandex_compute_snapshot.my_snapshot.id}"
+    ],
+    "data.yandex_compute_snapshot_schedule.my_snapshot_schedule.snapshot_schedule_id": [
+        "some_snapshot_schedule_id"
+    ],
+    "data.yandex_container_registry.source.registry_id": [
+        "some_registry_id"
+    ],
+    "resource.yandex_container_registry.default.name": [
+        "test-registry"
+    ],
+    "resource.yandex_container_registry.default.folder_id": [
+        "test_folder_id"
+    ],
+    "resource.yandex_container_registry.default.labels.my-label": [
+        "my-label-value"
+    ],
+    "data.yandex_container_registry_ip_permission.my_ip_permission_by_id.registry_id": [
+        "yandex_container_registry.default.id"
+    ],
+    "data.yandex_container_repository.repo-1.name": [
+        "some_repository_name"
+    ],
+    "data.yandex_container_repository.repo-2.repository_id": [
+        "some_repository_id"
+    ],
+    "data.yandex_container_repository_lifecycle_policy.my_lifecycle_policy_by_id.lifecycle_policy_id": [
+        "yandex_container_repository_lifecycle_policy.my_lifecycle_policy.id"
+    ],
+    "data.yandex_dataproc_cluster.foo.name": [
+        "test"
+    ],
+    "output.service_account_id.value": [
+        "${data.yandex_dataproc_cluster.foo.service_account_id}"
+    ],
+    "data.yandex_dns_zone.foo.dns_zone_id": [
+        "yandex_dns_zone.zone1.id"
+    ],
+    "output.zone.value": [
+        "data.yandex_dns_zone.foo.zone"
+    ],
+    "data.yandex_function.my_function.function_id": [
+        "are1samplefunction11"
+    ],
+    "data.yandex_function_scaling_policy.my_scaling_policy.function_id": [
+        "are1samplefunction11"
+    ],
+    "data.yandex_function_trigger.my_trigger.trigger_id": [
+        "are1sampletrigger11"
+    ],
+    "data.yandex_iam_policy.admin.binding[0].role": [
+        "admin"
+    ],
+    "data.yandex_iam_policy.admin.binding[0].members[0]": [
+        "userAccount:user_id_1"
+    ],
+    "data.yandex_iam_policy.admin.binding[1].role": [
+        "viewer"
+    ],
+    "data.yandex_iam_policy.admin.binding[1].members[0]": [
+        "userAccount:user_id_2"
+    ],
+    "data.yandex_iam_role.admin.binding.role": [
+        "admin"
+    ],
+    "data.yandex_iam_role.admin.binding.members[0]": [
+        "userAccount:user_id_1"
+    ],
+    "data.yandex_iam_service_account.builder.service_account_id": [
+        "sa_id"
+    ],
+    "data.yandex_iam_service_account.deployer.name": [
+        "sa_name"
+    ],
+    "data.yandex_iam_user.admin.login": [
+        "my-yandex-login"
+    ],
+    "data.yandex_iot_core_broker.my_broker.broker_id": [
+        "are1samplebroker11"
+    ],
+    "data.yandex_iot_core_device.my_device.device_id": [
+        "are1sampleregistry11"
+    ],
+    "data.yandex_iot_core_registry.my_registry.registry_id": [
+        "are1sampleregistry11"
+    ],
+    "data.yandex_kubernetes_cluster.my_cluster.cluster_id": [
+        "some_k8s_cluster_id"
+    ],
+    "output.cluster_external_v4_endpoint.value": [
+        "${data.yandex_kubernetes_cluster.my_cluster.master.0.external_v4_endpoint}"
+    ],
+    "data.yandex_kubernetes_node_group.my_node_group.node_group_id": [
+        "some_k8s_node_group_id"
+    ],
+    "output.my_node_group.status.value": [
+        "${data.yandex_kubernetes_node_group.my_node_group.status}"
+    ],
+    "data.yandex_lb_network_load_balancer.foo.network_load_balancer_id": [
+        "my-network-load-balancer"
+    ],
+    "data.yandex_lb_target_group.foo.target_group_id": [
+        "my-target-group-id"
+    ],
+    "data.yandex_lockbox_secret.my_secret.secret_id": [
+        "some ID"
+    ],
+    "output.my_secret_created_at.value": [
+        "data.yandex_lockbox_secret.my_secret.created_at"
+    ],
+    "data.yandex_lockbox_secret_version.my_secret_version.secret_id": [
+        "some ID"
+    ],
+    "output.my_secret_entries.value": [
+        "data.yandex_lockbox_secret.my_secret_version.entries"
+    ],
+    "data.yandex_logging_group.my_group.group_id": [
+        "some_yandex_logging_group_id"
+    ],
+    "output.log_group_retention_period.value": [
+        "${data.yandex_logging_group.my_group.retention_period}"
+    ],
+    "data.yandex_mdb_clickhouse_cluster.foo.name": [
+        "test"
+    ],
+    "output.network_id.value": [
+        "${data.yandex_mdb_clickhouse_cluster.foo.network_id}",
+        "${data.yandex_mdb_elasticsearch_cluster.foo.network_id}",
+        "${data.yandex_mdb_greenplum_cluster.foo.network_id}",
+        "${data.yandex_mdb_kafka_cluster.foo.network_id}",
+        "${data.yandex_mdb_mongodb_cluster.foo.network_id}",
+        "${data.yandex_mdb_mysql_cluster.foo.network_id}",
+        "${data.yandex_mdb_redis_cluster.foo.network_id}",
+        "${data.yandex_mdb_sqlserver_cluster.foo.network_id}"
+    ],
+    "data.yandex_mdb_elasticsearch_cluster.foo.name": [
+        "test"
+    ],
+    "data.yandex_mdb_greenplum_cluster.foo.name": [
+        "test"
+    ],
+    "data.yandex_mdb_kafka_cluster.foo.name": [
+        "test"
+    ],
+    "data.yandex_mdb_kafka_connector.foo.cluster_id": [
+        "some_cluster_id"
+    ],
+    "data.yandex_mdb_kafka_connector.foo.name": [
+        "test"
+    ],
+    "output.tasks_max.value": [
+        "${data.yandex_mdb_kafka_connector.foo.tasks_max}"
+    ],
+    "data.yandex_mdb_kafka_topic.foo.cluster_id": [
+        "some_cluster_id"
+    ],
+    "data.yandex_mdb_kafka_topic.foo.name": [
+        "test"
+    ],
+    "output.replication_factor.value": [
+        "${data.yandex_mdb_kafka_topic.foo.replication_factor}"
+    ],
+    "data.yandex_mdb_mongodb_cluster.foo.name": [
+        "test"
+    ],
+    "data.yandex_mdb_mysql_cluster.foo.name": [
+        "test"
+    ],
+    "data.yandex_mdb_mysql_user.foo.cluster_id": [
+        "some_cluster_id"
+    ],
+    "data.yandex_mdb_mysql_user.foo.name": [
+        "test"
+    ],
+    "output.permission.value": [
+        "${data.yandex_mdb_mysql_user.foo.permission}",
+        "${data.yandex_mdb_postgresql_user.foo.permission}"
+    ],
+    "data.yandex_mdb_postgresql_cluster.foo.name": [
+        "test"
+    ],
+    "output.fqdn.value": [
+        "${data.yandex_mdb_postgresql_cluster.foo.host.0.fqdn}"
+    ],
+    "data.yandex_mdb_postgresql_database.foo.cluster_id": [
+        "some_cluster_id"
+    ],
+    "data.yandex_mdb_postgresql_database.foo.name": [
+        "test"
+    ],
+    "output.owner.value": [
+        "${data.yandex_mdb_postgresql_database.foo.owner}"
+    ],
+    "data.yandex_mdb_postgresql_user.foo.cluster_id": [
+        "some_cluster_id"
+    ],
+    "data.yandex_mdb_postgresql_user.foo.name": [
+        "test"
+    ],
+    "data.yandex_mdb_redis_cluster.foo.name": [
+        "test"
+    ],
+    "data.yandex_mdb_sqlserver_cluster.foo.name": [
+        "test"
+    ],
+    "data.yandex_message_queue.example_queue.name": [
+        "ymq_terraform_example"
+    ],
+    "data.yandex_monitoring_dashboard.my_dashboard.dashboard_id": [
+        "some_instance_dashboard_id"
+    ],
+    "data.yandex_organizationmanager_group.group.group_id": [
+        "some_group_id"
+    ],
+    "data.yandex_organizationmanager_group.group.organization_id": [
+        "some_organization_id"
+    ],
+    "output.my_group.name.value": [
+        "${data.yandex_organizationmanager_group.group.name}"
+    ],
+    "data.yandex_organizationmanager_saml_federation.federation.federation_id": [
+        "some_federation_id"
+    ],
+    "data.yandex_organizationmanager_saml_federation.federation.organization_id": [
+        "some_organization_id"
+    ],
+    "output.my_federation.name.value": [
+        "${data.yandex_organizationmanager_saml_federation.federation.name}"
+    ],
+    "data.yandex_organizationmanager_saml_federation_user_account.account.federation_id": [
+        "some_federation_id"
+    ],
+    "data.yandex_organizationmanager_saml_federation_user_account.account.name_id": [
+        "example@example.org"
+    ],
+    "output.my_federation.id.value": [
+        "${data.yandex_organizationmanager_saml_federation_user_account.account.id}"
+    ],
+    "data.yandex_resourcemanager_cloud.foo.name": [
+        "foo-cloud"
+    ],
+    "output.cloud_create_timestamp.value": [
+        "${data.yandex_resourcemanager_cloud.foo.created_at}"
+    ],
+    "data.yandex_resourcemanager_folder.my_folder_1.folder_id": [
+        "folder_id_number_1"
+    ],
+    "data.yandex_resourcemanager_folder.my_folder_2.name": [
+        "folder_name"
+    ],
+    "data.yandex_resourcemanager_folder.my_folder_2.cloud_id": [
+        "some_cloud_id"
+    ],
+    "output.my_folder_1_name.value": [
+        "${data.yandex_resourcemanager_folder.my_folder_1.name}"
+    ],
+    "output.my_folder_2_cloud_id.value": [
+        "${data.yandex_resourcemanager_folder.my_folder_2.cloud_id}"
+    ],
+    "data.yandex_serverless_container.my-container.container_id": [
+        "are1samplecontainer11"
+    ],
+    "data.yandex_vpc_address.addr.address_id": [
+        "my-address-id"
+    ],
+    "data.yandex_vpc_gateway.default.gateway_id": [
+        "my-gateway-id"
+    ],
+    "data.yandex_vpc_network.admin.network_id": [
+        "my-network-id"
+    ],
+    "data.yandex_vpc_route_table.this.route_table_id": [
+        "my-rt-id"
+    ],
+    "data.yandex_vpc_security_group.group1.security_group_id": [
+        "my-id"
+    ],
+    "data.yandex_vpc_security_group.group1.name": [
+        "my-group1"
+    ],
+    "data.yandex_vpc_security_group_rule.rule1.security_group_binding": [
+        "my-sg-id"
+    ],
+    "data.yandex_vpc_security_group_rule.rule1.rule_id": [
+        "my-rule-id"
+    ],
+    "data.yandex_vpc_subnet.admin.subnet_id": [
+        "my-subnet-id"
+    ],
+    "data.yandex_ydb_database_dedicated.my_database.database_id": [
+        "some_ydb_dedicated_database_id"
+    ],
+    "output.ydb_api_endpoint.value": [
+        "${data.yandex_ydb_database_dedicated.my_database.ydb_api_endpoint}",
+        "${data.yandex_ydb_database_serverless.my_database.ydb_api_endpoint}"
+    ],
+    "data.yandex_ydb_database_serverless.my_database.database_id": [
+        "some_ydb_serverless_database_id"
+    ],
+    "data.yandex_compute_image.container-optimized-image.family": [
+        "container-optimized-image"
+    ],
+    "resource.yandex_compute_instance.instance-based-on-coi.boot_disk.initialize_params.image_id": [
+        "data.yandex_compute_image.container-optimized-image.id"
+    ],
+    "resource.yandex_compute_instance.instance-based-on-coi.network_interface.subnet_id": [
+        "your subnet id"
+    ],
+    "resource.yandex_compute_instance.instance-based-on-coi.network_interface.nat": [
+        true
+    ],
+    "resource.yandex_compute_instance.instance-based-on-coi.resources.cores": [
+        2
+    ],
+    "resource.yandex_compute_instance.instance-based-on-coi.resources.memory": [
+        2
+    ],
+    "resource.yandex_compute_instance.instance-based-on-coi.metadata.docker-container-declaration": [
+        "file(${path.module}/declaration.yaml)"
+    ],
+    "resource.yandex_compute_instance.instance-based-on-coi.metadata.user-data": [
+        "file(${path.module}/cloud_config.yaml)"
+    ],
+    "output.external_ip.value": [
+        "yandex_compute_instance.instance-based-on-coi.network_interface.0.nat_ip_address"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.name": [
+        "ig with coi"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.folder_id": [
+        "your folder"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.service_account_id": [
+        "your service account id"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.instance_template.platform_id": [
+        "standard-v1"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.instance_template.resources.memory": [
+        2
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.instance_template.resources.cores": [
+        1
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.instance_template.boot_disk.mode": [
+        "READ_WRITE"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.instance_template.boot_disk.initialize_params.image_id": [
+        "data.yandex_compute_image.container-optimized-image.id"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.instance_template.network_interface.network_id": [
+        "your network id"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.instance_template.network_interface.subnet_ids[0]": [
+        "all your subnet ids"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.instance_template.metadata.docker-container-declaration": [
+        "file(${path.module}/declaration.yaml)"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.instance_template.metadata.user-data": [
+        "file(${path.module}/cloud_config.yaml)"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.instance_template.service_account_id": [
+        "The ID of the service account authorized for this instance"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.scale_policy.fixed_scale.size": [
+        3
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.allocation_policy.zones[0]": [
+        "all your availability zones"
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.deploy_policy.max_unavailable": [
+        2
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.deploy_policy.max_creating": [
+        2
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.deploy_policy.max_expansion": [
+        2
+    ],
+    "resource.yandex_compute_instance_group.ig-with-coi.deploy_policy.max_deleting": [
+        2
+    ],
+    "resource.yandex_alb_backend_group.test-backend-group.name": [
+        "my-backend-group"
+    ],
+    "resource.yandex_alb_backend_group.test-backend-group.http_backend.name": [
+        "test-http-backend"
+    ],
+    "resource.yandex_alb_backend_group.test-backend-group.http_backend.weight": [
+        1
+    ],
+    "resource.yandex_alb_backend_group.test-backend-group.http_backend.port": [
+        8080
+    ],
+    "resource.yandex_alb_backend_group.test-backend-group.http_backend.target_group_ids[0]": [
+        "${yandex_alb_target_group.test-target-group.id}"
+    ],
+    "resource.yandex_alb_backend_group.test-backend-group.http_backend.tls.sni": [
+        "backend-domain.internal"
+    ],
+    "resource.yandex_alb_backend_group.test-backend-group.http_backend.load_balancing_config.panic_threshold": [
+        50
+    ],
+    "resource.yandex_alb_backend_group.test-backend-group.http_backend.healthcheck.timeout": [
+        "1s"
+    ],
+    "resource.yandex_alb_backend_group.test-backend-group.http_backend.healthcheck.interval": [
+        "1s"
+    ],
+    "resource.yandex_alb_backend_group.test-backend-group.http_backend.healthcheck.http_healthcheck.path": [
+        "/"
+    ],
+    "resource.yandex_alb_backend_group.test-backend-group.http_backend.http2": [
+        "true"
+    ],
+    "resource.yandex_alb_load_balancer.test-balancer.name": [
+        "my-load-balancer"
+    ],
+    "resource.yandex_alb_load_balancer.test-balancer.network_id": [
+        "yandex_vpc_network.test-network.id"
+    ],
+    "resource.yandex_alb_load_balancer.test-balancer.allocation_policy.location.zone_id": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_alb_load_balancer.test-balancer.allocation_policy.location.subnet_id": [
+        "yandex_vpc_subnet.test-subnet.id"
+    ],
+    "resource.yandex_alb_load_balancer.test-balancer.listener.name": [
+        "my-listener"
+    ],
+    "resource.yandex_alb_load_balancer.test-balancer.listener.endpoint.ports[0]": [
+        8080
+    ],
+    "resource.yandex_alb_load_balancer.test-balancer.listener.http.handler.http_router_id": [
+        "yandex_alb_http_router.test-router.id"
+    ],
+    "resource.yandex_alb_load_balancer.test-balancer.log_options.discard_rule.http_code_intervals[0]": [
+        "2XX"
+    ],
+    "resource.yandex_alb_load_balancer.test-balancer.log_options.discard_rule.discard_percent": [
+        75
+    ],
+    "resource.yandex_alb_target_group.foo.name": [
+        "my-target-group"
+    ],
+    "resource.yandex_alb_target_group.foo.target[0].subnet_id": [
+        "${yandex_vpc_subnet.my-subnet.id}"
+    ],
+    "resource.yandex_alb_target_group.foo.target[0].ip_address": [
+        "${yandex_compute_instance.my-instance-1.network_interface.0.ip_address}"
+    ],
+    "resource.yandex_alb_target_group.foo.target[1].subnet_id": [
+        "${yandex_vpc_subnet.my-subnet.id}"
+    ],
+    "resource.yandex_alb_target_group.foo.target[1].ip_address": [
+        "${yandex_compute_instance.my-instance-2.network_interface.0.ip_address}"
+    ],
+    "resource.yandex_alb_virtual_host.my-virtual-host.name": [
+        "my-virtual-host"
+    ],
+    "resource.yandex_alb_virtual_host.my-virtual-host.http_router_id": [
+        "yandex_alb_http_router.my-router.id"
+    ],
+    "resource.yandex_alb_virtual_host.my-virtual-host.route.name": [
+        "my-route"
+    ],
+    "resource.yandex_alb_virtual_host.my-virtual-host.route.http_route.http_route_action.backend_group_id": [
+        "yandex_alb_backend_group.my-bg.id"
+    ],
+    "resource.yandex_alb_virtual_host.my-virtual-host.route.http_route.http_route_action.timeout": [
+        "3s"
+    ],
+    "resource.yandex_api_gateway.test-api-gateway.name": [
+        "some_name"
+    ],
+    "resource.yandex_api_gateway.test-api-gateway.description": [
+        "any description"
+    ],
+    "resource.yandex_api_gateway.test-api-gateway.labels.label": [
+        "label"
+    ],
+    "resource.yandex_api_gateway.test-api-gateway.labels.empty-label": [
+        ""
+    ],
+    "resource.yandex_api_gateway.test-api-gateway.custom_domains.fqdn": [
+        "test.example.com"
+    ],
+    "resource.yandex_api_gateway.test-api-gateway.custom_domains.certificate_id": [
+        "<certificate_id_from_cert_manager>"
+    ],
+    "resource.yandex_api_gateway.test-api-gateway.connectivity.network_id": [
+        "<dynamic network id>"
+    ],
+    "resource.yandex_api_gateway.test-api-gateway.spec": [
+        "openapi: \"3.0.0\"\ninfo:\n  version: 1.0.0\n  title: Test API\npaths:\n  /hello:\n    get:\n      summary: Say hello\n      operationId: hello\n      parameters:\n        - name: user\n          in: query\n          description: User name to appear in greetings\n          required: false\n          schema:\n            type: string\n            default: 'world'\n      responses:\n        '200':\n          description: Greeting\n          content:\n            'text/plain':\n              schema:\n                type: \"string\"\n      x-yc-apigateway-integration:\n        type: dummy\n        http_code: 200\n        http_headers:\n          'Content-Type': \"text/plain\"\n        content:\n          'text/plain': \"Hello again, {user}!\\n\""
+    ],
+    "resource.yandex_billing_cloud_binding.foo.billing_account_id": [
+        "foo-ba-id"
+    ],
+    "resource.yandex_billing_cloud_binding.foo.cloud_id": [
+        "foo-cloud-id"
+    ],
+    "resource.yandex_cdn_origin_group.my_group.name": [
+        "My Origin group"
+    ],
+    "resource.yandex_cdn_origin_group.my_group.use_next": [
+        true
+    ],
+    "resource.yandex_cdn_origin_group.my_group.origin[0].source": [
+        "ya.ru"
+    ],
+    "resource.yandex_cdn_origin_group.my_group.origin[1].source": [
+        "yandex.ru"
+    ],
+    "resource.yandex_cdn_origin_group.my_group.origin[2].source": [
+        "goo.gl"
+    ],
+    "resource.yandex_cdn_origin_group.my_group.origin[3].source": [
+        "amazon.com"
+    ],
+    "resource.yandex_cdn_origin_group.my_group.origin[3].backup": [
+        false
+    ],
+    "resource.yandex_cdn_resource.my_resource.cname": [
+        "cdn1.yandex-example.ru"
+    ],
+    "resource.yandex_cdn_resource.my_resource.active": [
+        false
+    ],
+    "resource.yandex_cdn_resource.my_resource.origin_protocol": [
+        "https"
+    ],
+    "resource.yandex_cdn_resource.my_resource.secondary_hostnames[0]": [
+        "cdn-example-1.yandex.ru"
+    ],
+    "resource.yandex_cdn_resource.my_resource.secondary_hostnames[1]": [
+        "cdn-example-2.yandex.ru"
+    ],
+    "resource.yandex_cdn_resource.my_resource.origin_group_id": [
+        "yandex_cdn_origin_group.foo_cdn_group_by_id.id"
+    ],
+    "resource.yandex_cdn_resource.my_resource.options.edge_cache_settings": [
+        345600
+    ],
+    "resource.yandex_cdn_resource.my_resource.options.ignore_cookie": [
+        true
+    ],
+    "resource.yandex_cm_certificate.example.self_managed.certificate": [
+        "-----BEGIN CERTIFICATE----- // ... -----END CERTIFICATE----- \\n -----BEGIN CERTIFICATE----- // ... -----END CERTIFICATE-----"
+    ],
+    "resource.yandex_cm_certificate.example.self_managed.private_key": [
+        "-----BEGIN RSA PRIVATE KEY----- // ... -----END RSA PRIVATE KEY-----"
+    ],
+    "resource.yandex_compute_disk.default.name": [
+        "disk-name"
+    ],
+    "resource.yandex_compute_disk.default.type": [
+        "network-ssd"
+    ],
+    "resource.yandex_compute_disk.default.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_compute_disk.default.image_id": [
+        "ubuntu-16.04-v20180727"
+    ],
+    "resource.yandex_compute_disk.default.labels.environment": [
+        "test"
+    ],
+    "resource.yandex_compute_disk.nr.name": [
+        "non-replicated-disk-name"
+    ],
+    "resource.yandex_compute_disk.nr.size": [
+        93
+    ],
+    "resource.yandex_compute_disk.nr.type": [
+        "network-ssd-nonreplicated"
+    ],
+    "resource.yandex_compute_disk.nr.zone": [
+        "ru-central1-b"
+    ],
+    "resource.yandex_compute_disk.nr.disk_placement_policy.disk_placement_group_id": [
+        "yandex_compute_disk_placement_group.this.id"
+    ],
+    "resource.yandex_compute_disk_placement_group.this.zone": [
+        "ru-central1-b"
+    ],
+    "resource.yandex_compute_disk_placement_group.group1.name": [
+        "test-pg"
+    ],
+    "resource.yandex_compute_disk_placement_group.group1.folder_id": [
+        "abc*********123"
+    ],
+    "resource.yandex_compute_disk_placement_group.group1.description": [
+        "my description"
+    ],
+    "resource.yandex_compute_filesystem.default.name": [
+        "fs-name"
+    ],
+    "resource.yandex_compute_filesystem.default.type": [
+        "network-ssd"
+    ],
+    "resource.yandex_compute_filesystem.default.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_compute_filesystem.default.size": [
+        10
+    ],
+    "resource.yandex_compute_filesystem.default.labels.environment": [
+        "test"
+    ],
+    "resource.yandex_compute_gpu_cluster.default.name": [
+        "gpu-cluster-name"
+    ],
+    "resource.yandex_compute_gpu_cluster.default.interconnect_type": [
+        "infiniband"
+    ],
+    "resource.yandex_compute_gpu_cluster.default.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_compute_gpu_cluster.default.labels.environment": [
+        "test"
+    ],
+    "resource.yandex_compute_image.foo-image.name": [
+        "my-custom-image"
+    ],
+    "resource.yandex_compute_image.foo-image.source_url": [
+        "https://storage.yandexcloud.net/lucky-images/kube-it.img"
+    ],
+    "resource.yandex_compute_instance.vm.name": [
+        "vm-from-custom-image"
+    ],
+    "resource.yandex_compute_instance.vm.boot_disk.initialize_params.image_id": [
+        "${yandex_compute_image.foo-image.id}"
+    ],
+    "resource.yandex_compute_instance.default.name": [
+        "test"
+    ],
+    "resource.yandex_compute_instance.default.platform_id": [
+        "standard-v1"
+    ],
+    "resource.yandex_compute_instance.default.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_compute_instance.default.resources.cores": [
+        2
+    ],
+    "resource.yandex_compute_instance.default.resources.memory": [
+        4
+    ],
+    "resource.yandex_compute_instance.default.boot_disk.initialize_params.image_id": [
+        "image_id"
+    ],
+    "resource.yandex_compute_instance.default.network_interface.subnet_id": [
+        "${yandex_vpc_subnet.foo.id}"
+    ],
+    "resource.yandex_compute_instance.default.metadata.foo": [
+        "bar"
+    ],
+    "resource.yandex_compute_instance.default.metadata.ssh-keys": [
+        "ubuntu:${file(\"~/.ssh/id_rsa.pub\")}"
+    ],
+    "resource.yandex_vpc_subnet.foo.zone": [
+        "ru-central1-a",
+        "ru-central1-b"
+    ],
+    "resource.yandex_vpc_subnet.foo.network_id": [
+        "${yandex_vpc_network.foo.id}",
+        "yandex_vpc_network.foo.id"
+    ],
+    "resource.yandex_vpc_subnet.foo.v4_cidr_blocks[0]": [
+        "10.5.0.0/24",
+        "10.1.0.0/24"
+    ],
+    "resource.yandex_compute_instance_group.group1.name": [
+        "test-ig"
+    ],
+    "resource.yandex_compute_instance_group.group1.folder_id": [
+        "${data.yandex_resourcemanager_folder.test_folder.id}"
+    ],
+    "resource.yandex_compute_instance_group.group1.service_account_id": [
+        "${yandex_iam_service_account.test_account.id}"
+    ],
+    "resource.yandex_compute_instance_group.group1.deletion_protection": [
+        true
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.platform_id": [
+        "standard-v1"
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.resources.memory": [
+        2
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.resources.cores": [
+        2
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.boot_disk.mode": [
+        "READ_WRITE"
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.boot_disk.initialize_params.image_id": [
+        "${data.yandex_compute_image.ubuntu.id}"
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.boot_disk.initialize_params.size": [
+        4
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.network_interface.network_id": [
+        "${yandex_vpc_network.my-inst-group-network.id}"
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.network_interface.subnet_ids[0]": [
+        "${yandex_vpc_subnet.my-inst-group-subnet.id}"
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.labels.label1": [
+        "label1-value"
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.labels.label2": [
+        "label2-value"
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.metadata.foo": [
+        "bar"
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.metadata.ssh-keys": [
+        "ubuntu:${file(\"~/.ssh/id_rsa.pub\")}"
+    ],
+    "resource.yandex_compute_instance_group.group1.instance_template.network_settings.type": [
+        "STANDARD"
+    ],
+    "resource.yandex_compute_instance_group.group1.variables.test_key1": [
+        "test_value1"
+    ],
+    "resource.yandex_compute_instance_group.group1.variables.test_key2": [
+        "test_value2"
+    ],
+    "resource.yandex_compute_instance_group.group1.scale_policy.fixed_scale.size": [
+        3
+    ],
+    "resource.yandex_compute_instance_group.group1.allocation_policy.zones[0]": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_compute_instance_group.group1.deploy_policy.max_unavailable": [
+        2
+    ],
+    "resource.yandex_compute_instance_group.group1.deploy_policy.max_creating": [
+        2
+    ],
+    "resource.yandex_compute_instance_group.group1.deploy_policy.max_expansion": [
+        2
+    ],
+    "resource.yandex_compute_instance_group.group1.deploy_policy.max_deleting": [
+        2
+    ],
+    "resource.yandex_compute_placement_group.group1.name": [
+        "test-pg"
+    ],
+    "resource.yandex_compute_placement_group.group1.folder_id": [
+        "abc*********123"
+    ],
+    "resource.yandex_compute_placement_group.group1.description": [
+        "my description"
+    ],
+    "resource.yandex_compute_snapshot.default.name": [
+        "test-snapshot"
+    ],
+    "resource.yandex_compute_snapshot.default.source_disk_id": [
+        "test_disk_id"
+    ],
+    "resource.yandex_compute_snapshot.default.labels.my-label": [
+        "my-label-value"
+    ],
+    "resource.yandex_compute_snapshot_schedule.default.schedule_policy.expression": [
+        "0 0 * * *"
+    ],
+    "resource.yandex_compute_snapshot_schedule.default.retention_period": [
+        "12h"
+    ],
+    "resource.yandex_compute_snapshot_schedule.default.snapshot_spec.description": [
+        "retention-snapshot"
+    ],
+    "resource.yandex_compute_snapshot_schedule.default.disk_ids[0]": [
+        "test_disk_id"
+    ],
+    "resource.yandex_compute_snapshot_schedule.default.disk_ids[1]": [
+        "another_test_disk_id"
+    ],
+    "resource.yandex_container_registry.your-registry.folder_id": [
+        "your-folder-id"
+    ],
+    "resource.yandex_container_registry.your-registry.name": [
+        "registry-name"
+    ],
+    "resource.yandex_container_registry_iam_binding.puller.registry_id": [
+        "yandex_container_registry.your-registry.id"
+    ],
+    "resource.yandex_container_registry_iam_binding.puller.role": [
+        "container-registry.images.puller"
+    ],
+    "resource.yandex_container_registry_iam_binding.puller.members[0]": [
+        "system:allUsers"
+    ],
+    "resource.yandex_container_registry.my_registry.name": [
+        "test-registry"
+    ],
+    "resource.yandex_container_registry_ip_permission.my_ip_permission.registry_id": [
+        "yandex_container_registry.my_registry.id"
+    ],
+    "resource.yandex_container_registry_ip_permission.my_ip_permission.push[0]": [
+        "10.1.0.0/16"
+    ],
+    "resource.yandex_container_registry_ip_permission.my_ip_permission.push[1]": [
+        "10.2.0.0/16"
+    ],
+    "resource.yandex_container_registry_ip_permission.my_ip_permission.push[2]": [
+        "10.3.0.0/16"
+    ],
+    "resource.yandex_container_registry_ip_permission.my_ip_permission.pull[0]": [
+        "10.1.0.0/16"
+    ],
+    "resource.yandex_container_registry_ip_permission.my_ip_permission.pull[1]": [
+        "10.5.0/16"
+    ],
+    "resource.yandex_container_registry.my-registry.name": [
+        "test-registry"
+    ],
+    "resource.yandex_container_repository.my-repository.name": [
+        "${yandex_container_registry.my-registry.id}/test-repository"
+    ],
+    "resource.yandex_container_repository.repo-1.name": [
+        "${yandex_container_registry.your-registry.id}/repo-1"
+    ],
+    "resource.yandex_container_repository_iam_binding.puller.repository_id": [
+        "yandex_container_repository.repo-1.id"
+    ],
+    "resource.yandex_container_repository_iam_binding.puller.role": [
+        "container-registry.images.puller"
+    ],
+    "resource.yandex_container_repository_iam_binding.puller.members[0]": [
+        "system:allUsers"
+    ],
+    "resource.yandex_container_repository_iam_binding.pusher.repository_id": [
+        "yandex_container_repository.repo-2.id"
+    ],
+    "resource.yandex_container_repository_iam_binding.pusher.role": [
+        "container-registry.images.pusher"
+    ],
+    "resource.yandex_container_repository_iam_binding.pusher.members[0]": [
+        "serviceAccount:your-service-account-id"
+    ],
+    "data.yandex_container_repository.repo-2.name": [
+        "some_repository_name"
+    ],
+    "resource.yandex_container_repository.my_repository.name": [
+        "${yandex_container_registry.my_registry.id}/test-repository"
+    ],
+    "resource.yandex_container_repository_lifecycle_policy.my_lifecycle_policy.name": [
+        "test-lifecycle-policy-name"
+    ],
+    "resource.yandex_container_repository_lifecycle_policy.my_lifecycle_policy.status": [
+        "active"
+    ],
+    "resource.yandex_container_repository_lifecycle_policy.my_lifecycle_policy.repository_id": [
+        "yandex_container_repository.my_repository.id"
+    ],
+    "resource.yandex_container_repository_lifecycle_policy.my_lifecycle_policy.rule.description": [
+        "my description"
+    ],
+    "resource.yandex_container_repository_lifecycle_policy.my_lifecycle_policy.rule.untagged": [
+        true
+    ],
+    "resource.yandex_container_repository_lifecycle_policy.my_lifecycle_policy.rule.tag_regexp": [
+        ".*"
+    ],
+    "resource.yandex_container_repository_lifecycle_policy.my_lifecycle_policy.rule.retained_top": [
+        1
+    ],
+    "resource.yandex_dataproc_cluster.foo.depends_on[0]": [
+        "yandex_resourcemanager_folder_iam_binding.dataproc"
+    ],
+    "resource.yandex_dataproc_cluster.foo.bucket": [
+        "yandex_storage_bucket.foo.bucket"
+    ],
+    "resource.yandex_dataproc_cluster.foo.description": [
+        "Dataproc Cluster created by Terraform"
+    ],
+    "resource.yandex_dataproc_cluster.foo.name": [
+        "dataproc-cluster"
+    ],
+    "resource.yandex_dataproc_cluster.foo.labels.created_by": [
+        "terraform"
+    ],
+    "resource.yandex_dataproc_cluster.foo.service_account_id": [
+        "yandex_iam_service_account.dataproc.id"
+    ],
+    "resource.yandex_dataproc_cluster.foo.zone_id": [
+        "ru-central1-b"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.hadoop.services[0]": [
+        "HDFS"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.hadoop.services[1]": [
+        "YARN"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.hadoop.services[2]": [
+        "SPARK"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.hadoop.services[3]": [
+        "TEZ"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.hadoop.services[4]": [
+        "MAPREDUCE"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.hadoop.services[5]": [
+        "HIVE"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.hadoop.properties.yarn:yarn.resourcemanager.am.max-attempts": [
+        5
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.hadoop.ssh_public_keys[0]": [
+        "file(~/.ssh/id_rsa.pub)"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[0].name": [
+        "main"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[0].role": [
+        "MASTERNODE"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[0].resources.resource_preset_id": [
+        "s2.small"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[0].resources.disk_type_id": [
+        "network-hdd"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[0].resources.disk_size": [
+        20
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[0].subnet_id": [
+        "yandex_vpc_subnet.foo.id"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[0].hosts_count": [
+        1
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[1].name": [
+        "data"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[1].role": [
+        "DATANODE"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[1].resources.resource_preset_id": [
+        "s2.small"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[1].resources.disk_type_id": [
+        "network-hdd"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[1].resources.disk_size": [
+        20
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[1].subnet_id": [
+        "yandex_vpc_subnet.foo.id"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[1].hosts_count": [
+        2
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[2].name": [
+        "compute"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[2].role": [
+        "COMPUTENODE"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[2].resources.resource_preset_id": [
+        "s2.small"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[2].resources.disk_type_id": [
+        "network-hdd"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[2].resources.disk_size": [
+        20
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[2].subnet_id": [
+        "yandex_vpc_subnet.foo.id"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[2].hosts_count": [
+        2
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].name": [
+        "compute_autoscaling"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].role": [
+        "COMPUTENODE"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].resources.resource_preset_id": [
+        "s2.small"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].resources.disk_type_id": [
+        "network-hdd"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].resources.disk_size": [
+        20
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].subnet_id": [
+        "yandex_vpc_subnet.foo.id"
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].hosts_count": [
+        2
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].autoscaling_config.max_hosts_count": [
+        10
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].autoscaling_config.measurement_duration": [
+        60
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].autoscaling_config.warmup_duration": [
+        60
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].autoscaling_config.stabilization_duration": [
+        120
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].autoscaling_config.preemptible": [
+        false
+    ],
+    "resource.yandex_dataproc_cluster.foo.cluster_config.subcluster_spec[3].autoscaling_config.decommission_timeout": [
+        60
+    ],
+    "resource.yandex_iam_service_account.dataproc.name": [
+        "dataproc"
+    ],
+    "resource.yandex_iam_service_account.dataproc.description": [
+        "service account to manage Dataproc Cluster"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_binding.dataproc.folder_id": [
+        "data.yandex_resourcemanager_folder.foo.id"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_binding.dataproc.role": [
+        "mdb.dataproc.agent"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_binding.dataproc.members[0]": [
+        "serviceAccount:${yandex_iam_service_account.dataproc.id}"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_binding.bucket-creator.folder_id": [
+        "data.yandex_resourcemanager_folder.foo.id"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_binding.bucket-creator.role": [
+        "editor"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_binding.bucket-creator.members[0]": [
+        "serviceAccount:${yandex_iam_service_account.dataproc.id}"
+    ],
+    "resource.yandex_iam_service_account_static_access_key.foo.service_account_id": [
+        "yandex_iam_service_account.dataproc.id"
+    ],
+    "resource.yandex_storage_bucket.foo.depends_on[0]": [
+        "yandex_resourcemanager_folder_iam_binding.bucket-creator"
+    ],
+    "resource.yandex_storage_bucket.foo.bucket": [
+        "foo"
+    ],
+    "resource.yandex_storage_bucket.foo.access_key": [
+        "yandex_iam_service_account_static_access_key.foo.access_key"
+    ],
+    "resource.yandex_storage_bucket.foo.secret_key": [
+        "yandex_iam_service_account_static_access_key.foo.secret_key"
+    ],
+    "data.yandex_resourcemanager_folder.foo.folder_id": [
+        "some_folder_id"
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_source.name": [
+        "pg-test-source"
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_source.settings.postgres_source.connection.on_premise.hosts[0]": [
+        "example.org"
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_source.settings.postgres_source.connection.on_premise.port": [
+        5432
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_source.settings.postgres_source.slot_gigabyte_lag_limit": [
+        100
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_source.settings.postgres_source.database": [
+        "db1"
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_source.settings.postgres_source.user": [
+        "user1"
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_source.settings.postgres_source.password.raw": [
+        "123"
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_target.folder_id": [
+        "some_folder_id"
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_target.name": [
+        "pg-test-target2"
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_target.settings.postgres_target.connection.mdb_cluster_id": [
+        "some_cluster_id"
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_target.settings.postgres_target.database": [
+        "db2"
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_target.settings.postgres_target.user": [
+        "user2"
+    ],
+    "resource.yandex_datatransfer_endpoint.pg_target.settings.postgres_target.password.raw": [
+        "321"
+    ],
+    "resource.yandex_datatransfer_transfer.pgpg_transfer.folder_id": [
+        "some_folder_id"
+    ],
+    "resource.yandex_datatransfer_transfer.pgpg_transfer.name": [
+        "pgpg"
+    ],
+    "resource.yandex_datatransfer_transfer.pgpg_transfer.source_id": [
+        "yandex_datatransfer_endpoint.pg_source.id"
+    ],
+    "resource.yandex_datatransfer_transfer.pgpg_transfer.target_id": [
+        "yandex_datatransfer_endpoint.pg_target.id"
+    ],
+    "resource.yandex_datatransfer_transfer.pgpg_transfer.type": [
+        "SNAPSHOT_AND_INCREMENT"
+    ],
+    "resource.yandex_dns_zone.zone1.name": [
+        "my_private_zone",
+        "my-private-zone"
+    ],
+    "resource.yandex_dns_zone.zone1.description": [
+        "desc"
+    ],
+    "resource.yandex_dns_zone.zone1.labels.label1": [
+        "label-1-value"
+    ],
+    "resource.yandex_dns_zone.zone1.zone": [
+        "example.com."
+    ],
+    "resource.yandex_dns_zone.zone1.public": [
+        false
+    ],
+    "resource.yandex_dns_zone.zone1.private_networks[0]": [
+        "yandex_vpc_network.foo.id"
+    ],
+    "resource.yandex_dns_recordset.rs1.zone_id": [
+        "yandex_dns_zone.zone1.id"
+    ],
+    "resource.yandex_dns_recordset.rs1.name": [
+        "srv.example.com."
+    ],
+    "resource.yandex_dns_recordset.rs1.type": [
+        "A"
+    ],
+    "resource.yandex_dns_recordset.rs1.ttl": [
+        200
+    ],
+    "resource.yandex_dns_recordset.rs1.data[0]": [
+        "10.1.0.1"
+    ],
+    "resource.yandex_dns_recordset.rs2.zone_id": [
+        "yandex_dns_zone.zone1.id"
+    ],
+    "resource.yandex_dns_recordset.rs2.name": [
+        "srv2"
+    ],
+    "resource.yandex_dns_recordset.rs2.type": [
+        "A"
+    ],
+    "resource.yandex_dns_recordset.rs2.ttl": [
+        200
+    ],
+    "resource.yandex_dns_recordset.rs2.data[0]": [
+        "10.1.0.2"
+    ],
+    "resource.yandex_function.test-function.name": [
+        "some_name"
+    ],
+    "resource.yandex_function.test-function.description": [
+        "any description"
+    ],
+    "resource.yandex_function.test-function.user_hash": [
+        "any_user_defined_string"
+    ],
+    "resource.yandex_function.test-function.runtime": [
+        "python37"
+    ],
+    "resource.yandex_function.test-function.entrypoint": [
+        "main"
+    ],
+    "resource.yandex_function.test-function.memory": [
+        "128"
+    ],
+    "resource.yandex_function.test-function.execution_timeout": [
+        "10"
+    ],
+    "resource.yandex_function.test-function.service_account_id": [
+        "are1service2account3id"
+    ],
+    "resource.yandex_function.test-function.tags[0]": [
+        "my_tag"
+    ],
+    "resource.yandex_function.test-function.secrets.id": [
+        "${yandex_lockbox_secret.secret.id}"
+    ],
+    "resource.yandex_function.test-function.secrets.version_id": [
+        "${yandex_lockbox_secret_version.secret_version.id}"
+    ],
+    "resource.yandex_function.test-function.secrets.key": [
+        "secret-key"
+    ],
+    "resource.yandex_function.test-function.secrets.environment_variable": [
+        "ENV_VARIABLE"
+    ],
+    "resource.yandex_function.test-function.content.zip_filename": [
+        "function.zip"
+    ],
+    "resource.yandex_function_iam_binding.function-iam.function_id": [
+        "your-function-id"
+    ],
+    "resource.yandex_function_iam_binding.function-iam.role": [
+        "serverless.functions.invoker"
+    ],
+    "resource.yandex_function_iam_binding.function-iam.members[0]": [
+        "system:allUsers"
+    ],
+    "resource.yandex_function_scaling_policy.my_scaling_policy.function_id": [
+        "are1samplefunction11"
+    ],
+    "resource.yandex_function_scaling_policy.my_scaling_policy.policy[0].tag": [
+        "$latest"
+    ],
+    "resource.yandex_function_scaling_policy.my_scaling_policy.policy[0].zone_instances_limit": [
+        3
+    ],
+    "resource.yandex_function_scaling_policy.my_scaling_policy.policy[0].zone_requests_limit": [
+        100
+    ],
+    "resource.yandex_function_scaling_policy.my_scaling_policy.policy[1].tag": [
+        "my_tag"
+    ],
+    "resource.yandex_function_scaling_policy.my_scaling_policy.policy[1].zone_instances_limit": [
+        4
+    ],
+    "resource.yandex_function_scaling_policy.my_scaling_policy.policy[1].zone_requests_limit": [
+        150
+    ],
+    "resource.yandex_function_trigger.my_trigger.name": [
+        "some_name"
+    ],
+    "resource.yandex_function_trigger.my_trigger.description": [
+        "any description"
+    ],
+    "resource.yandex_function_trigger.my_trigger.timer.cron_expression": [
+        "* * * * ? *"
+    ],
+    "resource.yandex_function_trigger.my_trigger.function.id": [
+        "tf-test"
+    ],
+    "resource.yandex_iam_service_account.sa.name": [
+        "vmmanager",
+        "tf-test-sa"
+    ],
+    "resource.yandex_iam_service_account.sa.description": [
+        "service account to manage VMs"
+    ],
+    "resource.yandex_iam_service_account_api_key.sa-api-key.service_account_id": [
+        "some_sa_id"
+    ],
+    "resource.yandex_iam_service_account_api_key.sa-api-key.description": [
+        "api key for authorization"
+    ],
+    "resource.yandex_iam_service_account_api_key.sa-api-key.pgp_key": [
+        "keybase:keybaseusername"
+    ],
+    "resource.yandex_iam_service_account_iam_binding.admin-account-iam.service_account_id": [
+        "your-service-account-id"
+    ],
+    "resource.yandex_iam_service_account_iam_binding.admin-account-iam.role": [
+        "admin"
+    ],
+    "resource.yandex_iam_service_account_iam_binding.admin-account-iam.members[0]": [
+        "userAccount:foo_user_id"
+    ],
+    "resource.yandex_iam_service_account_iam_member.admin-account-iam.service_account_id": [
+        "your-service-account-id"
+    ],
+    "resource.yandex_iam_service_account_iam_member.admin-account-iam.role": [
+        "admin"
+    ],
+    "resource.yandex_iam_service_account_iam_member.admin-account-iam.member": [
+        "userAccount:bar_user_id"
+    ],
+    "data.yandex_iam_policy.admin.binding.role": [
+        "admin",
+        "editor"
+    ],
+    "data.yandex_iam_policy.admin.binding.members[0]": [
+        "userAccount:foobar_user_id",
+        "userAccount:some_user_id"
+    ],
+    "resource.yandex_iam_service_account_iam_policy.admin-account-iam.service_account_id": [
+        "your-service-account-id"
+    ],
+    "resource.yandex_iam_service_account_iam_policy.admin-account-iam.policy_data": [
+        "${data.yandex_iam_policy.admin.policy_data}"
+    ],
+    "resource.yandex_iam_service_account_key.sa-auth-key.service_account_id": [
+        "some_sa_id"
+    ],
+    "resource.yandex_iam_service_account_key.sa-auth-key.description": [
+        "key for service account"
+    ],
+    "resource.yandex_iam_service_account_key.sa-auth-key.key_algorithm": [
+        "RSA_4096"
+    ],
+    "resource.yandex_iam_service_account_key.sa-auth-key.pgp_key": [
+        "keybase:keybaseusername"
+    ],
+    "resource.yandex_iam_service_account_static_access_key.sa-static-key.service_account_id": [
+        "some_sa_id",
+        "yandex_iam_service_account.sa.id"
+    ],
+    "resource.yandex_iam_service_account_static_access_key.sa-static-key.description": [
+        "static access key for object storage"
+    ],
+    "resource.yandex_iam_service_account_static_access_key.sa-static-key.pgp_key": [
+        "keybase:keybaseusername"
+    ],
+    "resource.yandex_iot_core_broker.my_broker.name": [
+        "some_name"
+    ],
+    "resource.yandex_iot_core_broker.my_broker.description": [
+        "any description"
+    ],
+    "resource.yandex_iot_core_broker.my_broker.labels.my-label": [
+        "my-label-value"
+    ],
+    "resource.yandex_iot_core_broker.my_broker.certificates[0]": [
+        "public part of certificate1"
+    ],
+    "resource.yandex_iot_core_broker.my_broker.certificates[1]": [
+        "public part of certificate2"
+    ],
+    "resource.yandex_iot_core_device.my_device.registry_id": [
+        "are1sampleregistryid11"
+    ],
+    "resource.yandex_iot_core_device.my_device.name": [
+        "some_name"
+    ],
+    "resource.yandex_iot_core_device.my_device.description": [
+        "any description"
+    ],
+    "resource.yandex_iot_core_device.my_device.aliases.some_alias1/subtopic": [
+        "$devices/{id}/events/somesubtopic"
+    ],
+    "resource.yandex_iot_core_device.my_device.aliases.some_alias2/subtopic": [
+        "$devices/{id}/events/aaa/bbb"
+    ],
+    "resource.yandex_iot_core_device.my_device.passwords[0]": [
+        "my-password1"
+    ],
+    "resource.yandex_iot_core_device.my_device.passwords[1]": [
+        "my-password2"
+    ],
+    "resource.yandex_iot_core_device.my_device.certificates[0]": [
+        "public part of certificate1"
+    ],
+    "resource.yandex_iot_core_device.my_device.certificates[1]": [
+        "public part of certificate2"
+    ],
+    "resource.yandex_iot_core_registry.my_registry.name": [
+        "some_name"
+    ],
+    "resource.yandex_iot_core_registry.my_registry.description": [
+        "any description"
+    ],
+    "resource.yandex_iot_core_registry.my_registry.labels.my-label": [
+        "my-label-value"
+    ],
+    "resource.yandex_iot_core_registry.my_registry.passwords[0]": [
+        "my-password1"
+    ],
+    "resource.yandex_iot_core_registry.my_registry.passwords[1]": [
+        "my-password2"
+    ],
+    "resource.yandex_iot_core_registry.my_registry.certificates[0]": [
+        "public part of certificate1"
+    ],
+    "resource.yandex_iot_core_registry.my_registry.certificates[1]": [
+        "public part of certificate2"
+    ],
+    "resource.yandex_kms_symmetric_key.example.name": [
+        "example-symetric-key"
+    ],
+    "resource.yandex_kms_symmetric_key.example.description": [
+        "description for key"
+    ],
+    "resource.yandex_kms_secret_ciphertext.password.key_id": [
+        "${yandex_kms_symmetric_key.example.id}"
+    ],
+    "resource.yandex_kms_secret_ciphertext.password.aad_context": [
+        "additional authenticated data"
+    ],
+    "resource.yandex_kms_secret_ciphertext.password.plaintext": [
+        "strong password"
+    ],
+    "resource.yandex_kms_symmetric_key.key-a.name": [
+        "example-symetric-key"
+    ],
+    "resource.yandex_kms_symmetric_key.key-a.description": [
+        "description for key"
+    ],
+    "resource.yandex_kms_symmetric_key.key-a.default_algorithm": [
+        "AES_128"
+    ],
+    "resource.yandex_kms_symmetric_key.key-a.rotation_period": [
+        "8760h"
+    ],
+    "resource.yandex_kms_symmetric_key.your-key.folder_id": [
+        "your-folder-id"
+    ],
+    "resource.yandex_kms_symmetric_key.your-key.name": [
+        "symmetric-key-name"
+    ],
+    "resource.yandex_kms_symmetric_key_iam_binding.viewer.symmetric_key_id": [
+        "yandex_kms_symmetric_key.your-key.id"
+    ],
+    "resource.yandex_kms_symmetric_key_iam_binding.viewer.role": [
+        "viewer"
+    ],
+    "resource.yandex_kms_symmetric_key_iam_binding.viewer.members[0]": [
+        "userAccount:foo_user_id"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.name": [
+        "name"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.description": [
+        "description"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.network_id": [
+        "${yandex_vpc_network.network_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.version": [
+        "1.17"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.zonal.zone": [
+        "${yandex_vpc_subnet.subnet_resource_name.zone}"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.zonal.subnet_id": [
+        "${yandex_vpc_subnet.subnet_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.public_ip": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.security_group_ids[0]": [
+        "${yandex_vpc_security_group.security_group_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.maintenance_policy.auto_upgrade": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.maintenance_policy.maintenance_window.start_time": [
+        "15:00"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.maintenance_policy.maintenance_window.duration": [
+        "3h"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.master_logging.enabled": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.master_logging.log_group_id": [
+        "${yandex_logging_group.log_group_resoruce_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.master_logging.kube_apiserver_enabled": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.master_logging.cluster_autoscaler_enabled": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.master.master_logging.events_enabled": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.service_account_id": [
+        "${yandex_iam_service_account.service_account_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.node_service_account_id": [
+        "${yandex_iam_service_account.node_service_account_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.labels.my_key": [
+        "my_value"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.labels.my_other_key": [
+        "my_other_value"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.release_channel": [
+        "RAPID"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.network_policy_provider": [
+        "CALICO"
+    ],
+    "resource.yandex_kubernetes_cluster.zonal_cluster_resource_name.kms_provider.key_id": [
+        "${yandex_kms_symmetric_key.kms_key_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.name": [
+        "name"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.description": [
+        "description"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.network_id": [
+        "${yandex_vpc_network.network_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.regional.region": [
+        "ru-central1"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.regional.location[0].zone": [
+        "${yandex_vpc_subnet.subnet_a_resource_name.zone}"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.regional.location[0].subnet_id": [
+        "${yandex_vpc_subnet.subnet_a_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.regional.location[1].zone": [
+        "${yandex_vpc_subnet.subnet_b_resource_name.zone}"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.regional.location[1].subnet_id": [
+        "${yandex_vpc_subnet.subnet_b_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.regional.location[2].zone": [
+        "${yandex_vpc_subnet.subnet_c_resource_name.zone}"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.regional.location[2].subnet_id": [
+        "${yandex_vpc_subnet.subnet_c_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.version": [
+        "1.14"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.public_ip": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.maintenance_policy.auto_upgrade": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.maintenance_policy.maintenance_window[0].day": [
+        "monday"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.maintenance_policy.maintenance_window[0].start_time": [
+        "15:00"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.maintenance_policy.maintenance_window[0].duration": [
+        "3h"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.maintenance_policy.maintenance_window[1].day": [
+        "friday"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.maintenance_policy.maintenance_window[1].start_time": [
+        "10:00"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.maintenance_policy.maintenance_window[1].duration": [
+        "4h30m"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.master_logging.enabled": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.master_logging.folder_id": [
+        "${data.yandex_resourcemanager_folder.folder_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.master_logging.kube_apiserver_enabled": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.master_logging.cluster_autoscaler_enabled": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.master.master_logging.events_enabled": [
+        true
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.service_account_id": [
+        "${yandex_iam_service_account.service_account_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.node_service_account_id": [
+        "${yandex_iam_service_account.node_service_account_resource_name.id}"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.labels.my_key": [
+        "my_value"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.labels.my_other_key": [
+        "my_other_value"
+    ],
+    "resource.yandex_kubernetes_cluster.regional_cluster_resource_name.release_channel": [
+        "STABLE"
+    ],
+    "depends_on[0]": [
+        "yandex_resourcemanager_folder_iam_member.ServiceAccountResourceName"
+    ],
+    "depends_on[1]": [
+        "yandex_resourcemanager_folder_iam_member.NodeServiceAccountResourceName"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.cluster_id": [
+        "${yandex_kubernetes_cluster.my_cluster.id}"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.name": [
+        "name"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.description": [
+        "description"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.version": [
+        "1.17"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.labels.key": [
+        "value"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.instance_template.platform_id": [
+        "standard-v2"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.instance_template.network_interface.nat": [
+        true
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.instance_template.network_interface.subnet_ids[0]": [
+        "${yandex_vpc_subnet.my_subnet.id}"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.instance_template.resources.memory": [
+        2
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.instance_template.resources.cores": [
+        2
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.instance_template.boot_disk.type": [
+        "network-hdd"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.instance_template.boot_disk.size": [
+        64
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.instance_template.scheduling_policy.preemptible": [
+        false
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.instance_template.container_runtime.type": [
+        "containerd"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.scale_policy.fixed_scale.size": [
+        1
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.allocation_policy.location.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.maintenance_policy.auto_upgrade": [
+        true
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.maintenance_policy.auto_repair": [
+        true
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.maintenance_policy.maintenance_window[0].day": [
+        "monday"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.maintenance_policy.maintenance_window[0].start_time": [
+        "15:00"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.maintenance_policy.maintenance_window[0].duration": [
+        "3h"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.maintenance_policy.maintenance_window[1].day": [
+        "friday"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.maintenance_policy.maintenance_window[1].start_time": [
+        "10:00"
+    ],
+    "resource.yandex_kubernetes_node_group.my_node_group.maintenance_policy.maintenance_window[1].duration": [
+        "4h30m"
+    ],
+    "resource.yandex_lb_network_load_balancer.foo.name": [
+        "my-network-load-balancer"
+    ],
+    "resource.yandex_lb_network_load_balancer.foo.listener.name": [
+        "my-listener"
+    ],
+    "resource.yandex_lb_network_load_balancer.foo.listener.port": [
+        8080
+    ],
+    "resource.yandex_lb_network_load_balancer.foo.listener.external_address_spec.ip_version": [
+        "ipv4"
+    ],
+    "resource.yandex_lb_network_load_balancer.foo.attached_target_group.target_group_id": [
+        "${yandex_lb_target_group.my-target-group.id}"
+    ],
+    "resource.yandex_lb_network_load_balancer.foo.attached_target_group.healthcheck.name": [
+        "http"
+    ],
+    "resource.yandex_lb_network_load_balancer.foo.attached_target_group.healthcheck.http_options.port": [
+        8080
+    ],
+    "resource.yandex_lb_network_load_balancer.foo.attached_target_group.healthcheck.http_options.path": [
+        "/ping"
+    ],
+    "resource.yandex_lb_target_group.foo.name": [
+        "my-target-group"
+    ],
+    "resource.yandex_lb_target_group.foo.region_id": [
+        "ru-central1"
+    ],
+    "resource.yandex_lb_target_group.foo.target[0].subnet_id": [
+        "${yandex_vpc_subnet.my-subnet.id}"
+    ],
+    "resource.yandex_lb_target_group.foo.target[0].address": [
+        "${yandex_compute_instance.my-instance-1.network_interface.0.ip_address}"
+    ],
+    "resource.yandex_lb_target_group.foo.target[1].subnet_id": [
+        "${yandex_vpc_subnet.my-subnet.id}"
+    ],
+    "resource.yandex_lb_target_group.foo.target[1].address": [
+        "${yandex_compute_instance.my-instance-2.network_interface.0.ip_address}"
+    ],
+    "resource.yandex_lockbox_secret.my_secret.name": [
+        "test secret"
+    ],
+    "resource.yandex_lockbox_secret_version.my_version.secret_id": [
+        "yandex_lockbox_secret.my_secret.id"
+    ],
+    "resource.yandex_lockbox_secret_version.my_version.entries[0].key": [
+        "key1"
+    ],
+    "resource.yandex_lockbox_secret_version.my_version.entries[0].text_value": [
+        "value1"
+    ],
+    "resource.yandex_lockbox_secret_version.my_version.entries[1].key": [
+        "k2"
+    ],
+    "resource.yandex_lockbox_secret_version.my_version.entries[1].command.path": [
+        "my_secret_generator.sh"
+    ],
+    "resource.yandex_logging_group.group1.name": [
+        "test-logging-group"
+    ],
+    "resource.yandex_logging_group.group1.folder_id": [
+        "${data.yandex_resourcemanager_folder.test_folder.id}"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.name": [
+        "test",
+        "ha",
+        "sharded"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.environment": [
+        "PRESTABLE",
+        "PRODUCTION"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.network_id": [
+        "${yandex_vpc_network.foo.id}"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.resources.resource_preset_id": [
+        "s2.micro"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.resources.disk_type_id": [
+        "network-ssd"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.resources.disk_size": [
+        32,
+        16
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.log_level": [
+        "TRACE"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.max_connections": [
+        100
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.max_concurrent_queries": [
+        50
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.keep_alive_timeout": [
+        3000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.uncompressed_cache_size": [
+        8589934592
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.mark_cache_size": [
+        5368709120
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.max_table_size_to_drop": [
+        53687091200
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.max_partition_size_to_drop": [
+        53687091200
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.timezone": [
+        "UTC"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.geobase_uri": [
+        ""
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.query_log_retention_size": [
+        1073741824
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.query_log_retention_time": [
+        2592000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.query_thread_log_enabled": [
+        true
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.query_thread_log_retention_size": [
+        536870912
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.query_thread_log_retention_time": [
+        2592000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.part_log_retention_size": [
+        536870912
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.part_log_retention_time": [
+        2592000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.metric_log_enabled": [
+        true
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.metric_log_retention_size": [
+        536870912
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.metric_log_retention_time": [
+        2592000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.trace_log_enabled": [
+        true
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.trace_log_retention_size": [
+        536870912
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.trace_log_retention_time": [
+        2592000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.text_log_enabled": [
+        true
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.text_log_retention_size": [
+        536870912
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.text_log_retention_time": [
+        2592000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.text_log_level": [
+        "TRACE"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.background_pool_size": [
+        16
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.background_schedule_pool_size": [
+        16
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.merge_tree.replicated_deduplication_window": [
+        100
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.merge_tree.replicated_deduplication_window_seconds": [
+        604800
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.merge_tree.parts_to_delay_insert": [
+        150
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.merge_tree.parts_to_throw_insert": [
+        300
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.merge_tree.max_replicated_merges_in_queue": [
+        16
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.merge_tree.number_of_free_entries_in_pool_to_lower_max_size_of_merge": [
+        8
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.merge_tree.max_bytes_to_merge_at_min_space_in_pool": [
+        1048576
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka.security_protocol": [
+        "SECURITY_PROTOCOL_PLAINTEXT"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka.sasl_mechanism": [
+        "SASL_MECHANISM_GSSAPI"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka.sasl_username": [
+        "user1"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka.sasl_password": [
+        "pass1"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka_topic[0].name": [
+        "topic1"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka_topic[0].settings.security_protocol": [
+        "SECURITY_PROTOCOL_SSL"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka_topic[0].settings.sasl_mechanism": [
+        "SASL_MECHANISM_SCRAM_SHA_256"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka_topic[0].settings.sasl_username": [
+        "user2"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka_topic[0].settings.sasl_password": [
+        "pass2"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka_topic[1].name": [
+        "topic2"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka_topic[1].settings.security_protocol": [
+        "SECURITY_PROTOCOL_SASL_PLAINTEXT"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.kafka_topic[1].settings.sasl_mechanism": [
+        "SASL_MECHANISM_PLAIN"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.rabbitmq.username": [
+        "rabbit_user"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.rabbitmq.password": [
+        "rabbit_pass"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.compression[0].method": [
+        "LZ4"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.compression[0].min_part_size": [
+        1024
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.compression[0].min_part_size_ratio": [
+        0.5
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.compression[1].method": [
+        "ZSTD"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.compression[1].min_part_size": [
+        2048
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.compression[1].min_part_size_ratio": [
+        0.7
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.graphite_rollup[0].name": [
+        "rollup1"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.graphite_rollup[0].pattern.regexp": [
+        "abc"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.graphite_rollup[0].pattern.function": [
+        "func1"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.graphite_rollup[0].pattern.retention.age": [
+        1000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.graphite_rollup[0].pattern.retention.precision": [
+        3
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.graphite_rollup[1].name": [
+        "rollup2"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.graphite_rollup[1].pattern.function": [
+        "func2"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.graphite_rollup[1].pattern.retention.age": [
+        2000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.clickhouse.config.graphite_rollup[1].pattern.retention.precision": [
+        5
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.database.name": [
+        "db_name"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.name": [
+        "user"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.password": [
+        "your_password",
+        "password"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.permission.database_name": [
+        "db_name"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.settings.max_memory_usage_for_user": [
+        1000000000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.settings.read_overflow_mode": [
+        "throw"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.settings.output_format_json_quote_64bit_integers": [
+        true
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.quota[0].interval_duration": [
+        3600000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.quota[0].queries": [
+        10000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.quota[0].errors": [
+        1000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.quota[1].interval_duration": [
+        79800000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.quota[1].queries": [
+        50000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.user.quota[1].errors": [
+        5000
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host.type": [
+        "CLICKHOUSE"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host.subnet_id": [
+        "${yandex_vpc_subnet.foo.id}"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.format_schema.name": [
+        "test_schema"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.format_schema.type": [
+        "FORMAT_SCHEMA_TYPE_CAPNPROTO"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.format_schema.uri": [
+        "https://storage.yandexcloud.net/ch-data/schema.proto"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.ml_model.name": [
+        "test_model"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.ml_model.type": [
+        "ML_MODEL_TYPE_CATBOOST"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.ml_model.uri": [
+        "https://storage.yandexcloud.net/ch-data/train.csv"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.service_account_id": [
+        "your_service_account_id"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.cloud_storage.enabled": [
+        false
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.maintenance_window.type": [
+        "ANYTIME"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.zookeeper.resources.resource_preset_id": [
+        "s2.micro"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.zookeeper.resources.disk_type_id": [
+        "network-ssd"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.zookeeper.resources.disk_size": [
+        10
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[0].type": [
+        "CLICKHOUSE"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[0].zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[0].subnet_id": [
+        "${yandex_vpc_subnet.foo.id}"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[1].type": [
+        "CLICKHOUSE"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[1].zone": [
+        "ru-central1-b"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[1].subnet_id": [
+        "${yandex_vpc_subnet.bar.id}"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[2].type": [
+        "ZOOKEEPER",
+        "CLICKHOUSE"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[2].zone": [
+        "ru-central1-a",
+        "ru-central1-b"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[2].subnet_id": [
+        "${yandex_vpc_subnet.foo.id}",
+        "${yandex_vpc_subnet.bar.id}"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[3].type": [
+        "ZOOKEEPER",
+        "CLICKHOUSE"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[3].zone": [
+        "ru-central1-b",
+        "ru-central1-c"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[3].subnet_id": [
+        "${yandex_vpc_subnet.bar.id}",
+        "${yandex_vpc_subnet.baz.id}"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[4].type": [
+        "ZOOKEEPER"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[4].zone": [
+        "ru-central1-c"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[4].subnet_id": [
+        "${yandex_vpc_subnet.baz.id}"
+    ],
+    "resource.yandex_vpc_subnet.bar.zone": [
+        "ru-central1-b"
+    ],
+    "resource.yandex_vpc_subnet.bar.network_id": [
+        "${yandex_vpc_network.foo.id}",
+        "yandex_vpc_network.foo.id"
+    ],
+    "resource.yandex_vpc_subnet.bar.v4_cidr_blocks[0]": [
+        "10.2.0.0/24"
+    ],
+    "resource.yandex_vpc_subnet.baz.zone": [
+        "ru-central1-c"
+    ],
+    "resource.yandex_vpc_subnet.baz.network_id": [
+        "${yandex_vpc_network.foo.id}"
+    ],
+    "resource.yandex_vpc_subnet.baz.v4_cidr_blocks[0]": [
+        "10.3.0.0/24"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.shard[0].name": [
+        "shard1"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.shard[0].weight": [
+        110
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.shard[1].name": [
+        "shard2"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.shard[1].weight": [
+        300
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[0].shard_name": [
+        "shard1"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[1].shard_name": [
+        "shard1"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[2].shard_name": [
+        "shard2"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.host[3].shard_name": [
+        "shard2"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.shard_group.name": [
+        "single_shard_group"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.shard_group.description": [
+        "Cluster configuration that contain only shard1"
+    ],
+    "resource.yandex_mdb_clickhouse_cluster.foo.shard_group.shard_names[0]": [
+        "shard1"
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.name": [
+        "test"
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.environment": [
+        "PRESTABLE"
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.network_id": [
+        "${yandex_vpc_network.foo.id}"
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.config.admin_password": [
+        "super-password"
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.config.data_node.resources.resource_preset_id": [
+        "s2.micro"
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.config.data_node.resources.disk_type_id": [
+        "network-ssd"
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.config.data_node.resources.disk_size": [
+        100
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.host.name": [
+        "node"
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.host.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.host.type": [
+        "DATA_NODE"
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.host.assign_public_ip": [
+        true
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.host.subnet_id": [
+        "${yandex_vpc_subnet.foo.id}"
+    ],
+    "resource.yandex_mdb_elasticsearch_cluster.foo.maintenance_window.type": [
+        "ANYTIME"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.name": [
+        "test"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.description": [
+        "test greenplum cluster"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.environment": [
+        "PRESTABLE"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.network_id": [
+        "yandex_vpc_network.foo.id"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.zone_id": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.subnet_id": [
+        "yandex_vpc_subnet.foo.id"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.assign_public_ip": [
+        true
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.version": [
+        "6.19"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.master_host_count": [
+        2
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.segment_host_count": [
+        5
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.segment_in_host": [
+        1
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.master_subcluster.resources.resource_preset_id": [
+        "s2.micro"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.master_subcluster.resources.disk_size": [
+        24
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.master_subcluster.resources.disk_type_id": [
+        "network-ssd"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.segment_subcluster.resources.resource_preset_id": [
+        "s2.micro"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.segment_subcluster.resources.disk_size": [
+        24
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.segment_subcluster.resources.disk_type_id": [
+        "network-ssd"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.access.web_sql": [
+        true
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.greenplum_config.max_connections": [
+        395
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.greenplum_config.gp_workfile_compression": [
+        "false"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.user_name": [
+        "admin_user"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.user_password": [
+        "your_super_secret_password"
+    ],
+    "resource.yandex_mdb_greenplum_cluster.foo.security_group_ids[0]": [
+        "yandex_vpc_security_group.test-sg-x.id"
+    ],
+    "resource.yandex_vpc_security_group.test-sg-x.network_id": [
+        "yandex_vpc_network.foo.id"
+    ],
+    "resource.yandex_vpc_security_group.test-sg-x.ingress.protocol": [
+        "ANY"
+    ],
+    "resource.yandex_vpc_security_group.test-sg-x.ingress.description": [
+        "Allow incoming traffic from members of the same security group"
+    ],
+    "resource.yandex_vpc_security_group.test-sg-x.ingress.from_port": [
+        0
+    ],
+    "resource.yandex_vpc_security_group.test-sg-x.ingress.to_port": [
+        65535
+    ],
+    "resource.yandex_vpc_security_group.test-sg-x.ingress.v4_cidr_blocks[0]": [
+        "0.0.0.0/0"
+    ],
+    "resource.yandex_vpc_security_group.test-sg-x.egress.protocol": [
+        "ANY"
+    ],
+    "resource.yandex_vpc_security_group.test-sg-x.egress.description": [
+        "Allow outgoing traffic to members of the same security group"
+    ],
+    "resource.yandex_vpc_security_group.test-sg-x.egress.from_port": [
+        0
+    ],
+    "resource.yandex_vpc_security_group.test-sg-x.egress.to_port": [
+        65535
+    ],
+    "resource.yandex_vpc_security_group.test-sg-x.egress.v4_cidr_blocks[0]": [
+        "0.0.0.0/0"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.name": [
+        "test",
+        "foo"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.environment": [
+        "PRESTABLE"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.network_id": [
+        "${yandex_vpc_network.foo.id}",
+        "c64vs98keiqc7f24pvkd"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.subnet_ids[0]": [
+        "${yandex_vpc_subnet.foo.id}"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.version": [
+        "2.8"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.brokers_count": [
+        1,
+        2
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.zones[0]": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.assign_public_ip": [
+        false,
+        true
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.unmanaged_topics": [
+        false,
+        true
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.schema_registry": [
+        false
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.resources.resource_preset_id": [
+        "s2.micro",
+        "s2.medium"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.resources.disk_type_id": [
+        "network-ssd",
+        "network-hdd"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.resources.disk_size": [
+        32,
+        128,
+        16
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.compression_type": [
+        "COMPRESSION_TYPE_ZSTD"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.log_flush_interval_messages": [
+        1024
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.log_flush_interval_ms": [
+        1000
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.log_flush_scheduler_interval_ms": [
+        1000
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.log_retention_bytes": [
+        1073741824
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.log_retention_hours": [
+        168
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.log_retention_minutes": [
+        10080
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.log_retention_ms": [
+        86400000
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.log_segment_bytes": [
+        134217728
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.log_preallocate": [
+        true
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.num_partitions": [
+        10
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.default_replication_factor": [
+        1,
+        6
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.message_max_bytes": [
+        1048588
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.replica_fetch_max_bytes": [
+        1048576
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.ssl_cipher_suites[0]": [
+        "TLS_DHE_RSA_WITH_AES_128_CBC_SHA"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.ssl_cipher_suites[1]": [
+        "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.offsets_retention_minutes": [
+        10080
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.sasl_enabled_mechanisms[0]": [
+        "SASL_MECHANISM_SCRAM_SHA_256"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.kafka.kafka_config.sasl_enabled_mechanisms[1]": [
+        "SASL_MECHANISM_SCRAM_SHA_512"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.user[0].name": [
+        "producer-application"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.user[0].password": [
+        "password"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.user[0].permission.topic_name": [
+        "input"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.user[0].permission.role": [
+        "ACCESS_ROLE_PRODUCER"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.user[1].name": [
+        "worker"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.user[1].password": [
+        "password"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.user[1].permission[0].topic_name": [
+        "input"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.user[1].permission[0].role": [
+        "ACCESS_ROLE_CONSUMER"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.user[1].permission[1].topic_name": [
+        "output"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.user[1].permission[1].role": [
+        "ACCESS_ROLE_PRODUCER"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.subnet_ids[1]": [
+        "${yandex_vpc_subnet.bar.id}"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.subnet_ids[2]": [
+        "${yandex_vpc_subnet.baz.id}"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.zones[1]": [
+        "ru-central1-b"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.zones[2]": [
+        "ru-central1-c"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.zookeeper.resources.resource_preset_id": [
+        "s2.micro"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.zookeeper.resources.disk_type_id": [
+        "network-ssd"
+    ],
+    "resource.yandex_mdb_kafka_cluster.foo.config.zookeeper.resources.disk_size": [
+        20
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.cluster_id": [
+        "yandex_mdb_kafka_cluster.foo.id"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.name": [
+        "s3-sink"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.tasks_max": [
+        3
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.properties.key.converter": [
+        "org.apache.kafka.connect.storage.StringConverter"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.properties.value.converter": [
+        "org.apache.kafka.connect.json.JsonConverter"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.properties.value.converter.schemas.enable": [
+        "false"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.properties.format.output.type": [
+        "jsonl"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.properties.file.name.template": [
+        "dir1/dir2/{{topic}}-{{partition:padding=true}}-{{start_offset:padding=true}}.gz"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.properties.timestamp.timezone": [
+        "Europe/Moscow"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.connector_config_s3_sink.topics": [
+        "data.*"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.connector_config_s3_sink.file_compression_type": [
+        "gzip"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.connector_config_s3_sink.file_max_records": [
+        100
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.connector_config_s3_sink.s3_connection.bucket_name": [
+        "somebucket"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.connector_config_s3_sink.s3_connection.external_s3.endpoint": [
+        "storage.yandexcloud.net"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.connector_config_s3_sink.s3_connection.external_s3.access_key_id": [
+        "some_access_key_id"
+    ],
+    "resource.yandex_mdb_kafka_connector.connector.connector_config_s3_sink.s3_connection.external_s3.secret_access_key": [
+        "some_secret_access_key"
+    ],
+    "resource.yandex_mdb_kafka_topic.events.cluster_id": [
+        "yandex_mdb_kafka_cluster.foo.id"
+    ],
+    "resource.yandex_mdb_kafka_topic.events.name": [
+        "events"
+    ],
+    "resource.yandex_mdb_kafka_topic.events.partitions": [
+        4
+    ],
+    "resource.yandex_mdb_kafka_topic.events.replication_factor": [
+        1
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.cleanup_policy": [
+        "CLEANUP_POLICY_COMPACT"
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.compression_type": [
+        "COMPRESSION_TYPE_LZ4"
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.delete_retention_ms": [
+        86400000
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.file_delete_delay_ms": [
+        60000
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.flush_messages": [
+        128
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.flush_ms": [
+        1000
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.min_compaction_lag_ms": [
+        0
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.retention_bytes": [
+        10737418240
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.retention_ms": [
+        604800000
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.max_message_bytes": [
+        1048588
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.min_insync_replicas": [
+        1
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.segment_bytes": [
+        268435456
+    ],
+    "resource.yandex_mdb_kafka_topic.events.topic_config.preallocate": [
+        true
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.name": [
+        "test"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.environment": [
+        "PRESTABLE"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.network_id": [
+        "${yandex_vpc_network.foo.id}"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.cluster_config.version": [
+        "4.2"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.labels.test_key": [
+        "test_value"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.database.name": [
+        "testdb"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.user.name": [
+        "john"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.user.password": [
+        "password"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.user.permission.database_name": [
+        "testdb"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.resources_mongod.resource_preset_id": [
+        "s2.small"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.resources_mongod.disk_size": [
+        16
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.resources_mongod.disk_type_id": [
+        "network-hdd"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.resources_mongos.resource_preset_id": [
+        "s2.small"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.resources_mongos.disk_size": [
+        14
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.resources_mongos.disk_type_id": [
+        "network-hdd"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.resources_mongocfg.resource_preset_id": [
+        "s2.small"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.resources_mongocfg.disk_size": [
+        14
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.resources_mongocfg.disk_type_id": [
+        "network-hdd"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.host.zone_id": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.host.subnet_id": [
+        "${yandex_vpc_subnet.foo.id}"
+    ],
+    "resource.yandex_mdb_mongodb_cluster.foo.maintenance_window.type": [
+        "ANYTIME"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.name": [
+        "test"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.environment": [
+        "PRESTABLE"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.network_id": [
+        "yandex_vpc_network.foo.id"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.version": [
+        "8.0"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.resources.resource_preset_id": [
+        "s2.micro"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.resources.disk_type_id": [
+        "network-ssd"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.resources.disk_size": [
+        16
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.mysql_config.sql_mode": [
+        "ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.mysql_config.max_connections": [
+        100
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.mysql_config.default_authentication_plugin": [
+        "MYSQL_NATIVE_PASSWORD"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.mysql_config.innodb_print_all_deadlocks": [
+        true
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host.subnet_id": [
+        "yandex_vpc_subnet.foo.id"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.maintenance_window.type": [
+        "WEEKLY",
+        "ANYTIME"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.maintenance_window.day": [
+        "SAT"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.maintenance_window.hour": [
+        12
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[0].zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[0].subnet_id": [
+        "yandex_vpc_subnet.foo.id"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[1].zone": [
+        "ru-central1-b",
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[1].subnet_id": [
+        "yandex_vpc_subnet.bar.id",
+        "yandex_vpc_subnet.foo.id"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[0].name": [
+        "na-1"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[1].name": [
+        "na-2",
+        "nb-1"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[2].zone": [
+        "ru-central1-b"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[2].name": [
+        "nb-1",
+        "nb-2"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[2].replication_source_name": [
+        "na-1"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[2].subnet_id": [
+        "yandex_vpc_subnet.bar.id"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[3].zone": [
+        "ru-central1-b"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[3].name": [
+        "nb-2"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[3].replication_source_name": [
+        "nb-1"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[3].subnet_id": [
+        "yandex_vpc_subnet.bar.id"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[1].backup_priority": [
+        5
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[2].backup_priority": [
+        10
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[1].priority": [
+        5
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.host[2].priority": [
+        10
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.restore.backup_id": [
+        "c9qj2tns23432471d9qha:stream_20210122T141717Z"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.restore.time": [
+        "2021-01-23T15:04:05"
+    ],
+    "resource.yandex_mdb_mysql_database.foo.cluster_id": [
+        "yandex_mdb_mysql_cluster.foo.id"
+    ],
+    "resource.yandex_mdb_mysql_database.foo.name": [
+        "testdb"
+    ],
+    "resource.yandex_mdb_mysql_user.john.cluster_id": [
+        "yandex_mdb_mysql_cluster.foo.id"
+    ],
+    "resource.yandex_mdb_mysql_user.john.name": [
+        "john"
+    ],
+    "resource.yandex_mdb_mysql_user.john.password": [
+        "password"
+    ],
+    "resource.yandex_mdb_mysql_user.john.permission[0].database_name": [
+        "yandex_mdb_mysql_database.testdb.name"
+    ],
+    "resource.yandex_mdb_mysql_user.john.permission[0].roles[0]": [
+        "ALL"
+    ],
+    "resource.yandex_mdb_mysql_user.john.permission[1].database_name": [
+        "yandex_mdb_mysql_database.new_testdb.name"
+    ],
+    "resource.yandex_mdb_mysql_user.john.permission[1].roles[0]": [
+        "ALL"
+    ],
+    "resource.yandex_mdb_mysql_user.john.permission[1].roles[1]": [
+        "INSERT"
+    ],
+    "resource.yandex_mdb_mysql_user.john.connection_limits.max_questions_per_hour": [
+        10
+    ],
+    "resource.yandex_mdb_mysql_user.john.connection_limits.max_updates_per_hour": [
+        20
+    ],
+    "resource.yandex_mdb_mysql_user.john.connection_limits.max_connections_per_hour": [
+        30
+    ],
+    "resource.yandex_mdb_mysql_user.john.connection_limits.max_user_connections": [
+        40
+    ],
+    "resource.yandex_mdb_mysql_user.john.global_permissions[0]": [
+        "PROCESS"
+    ],
+    "resource.yandex_mdb_mysql_user.john.authentication_plugin": [
+        "SHA256_PASSWORD"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.config.version": [
+        14
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.config.resources.resource_preset_id": [
+        "s2.micro"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.config.resources.disk_type_id": [
+        "network-ssd"
+    ],
+    "resource.yandex_mdb_mysql_cluster.foo.config.resources.disk_size": [
+        16
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.name": [
+        "test",
+        "ha",
+        "test_ha"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.environment": [
+        "PRESTABLE"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.network_id": [
+        "yandex_vpc_network.foo.id"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.config.version": [
+        15
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.config.resources.resource_preset_id": [
+        "s2.micro"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.config.resources.disk_type_id": [
+        "network-ssd"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.config.resources.disk_size": [
+        16,
+        10
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.config.postgresql_config.max_connections": [
+        395
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.config.postgresql_config.enable_parallel_hash": [
+        true
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.config.postgresql_config.autovacuum_vacuum_scale_factor": [
+        0.34
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.config.postgresql_config.default_transaction_isolation": [
+        "TRANSACTION_ISOLATION_READ_COMMITTED"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.config.postgresql_config.shared_preload_libraries": [
+        "SHARED_PRELOAD_LIBRARIES_AUTO_EXPLAIN,SHARED_PRELOAD_LIBRARIES_PG_HINT_PLAN"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.maintenance_window.type": [
+        "WEEKLY",
+        "ANYTIME"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.maintenance_window.day": [
+        "SAT"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.maintenance_window.hour": [
+        12
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host.subnet_id": [
+        "yandex_vpc_subnet.foo.id"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[0].zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[0].subnet_id": [
+        "yandex_vpc_subnet.foo.id",
+        "yandex_vpc_subnet.a.id"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[1].zone": [
+        "ru-central1-b"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[1].subnet_id": [
+        "yandex_vpc_subnet.bar.id",
+        "yandex_vpc_subnet.b.id"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.description": [
+        "test High-Availability (HA) PostgreSQL Cluster with priority and set master"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host_master_name": [
+        "host_name_c_2"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[0].name": [
+        "host_name_a"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[0].priority": [
+        2
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[1].name": [
+        "host_name_b"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[1].replication_source_name": [
+        "host_name_c"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[2].zone": [
+        "ru-central1-c"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[2].name": [
+        "host_name_c"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[2].subnet_id": [
+        "yandex_vpc_subnet.c.id"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[3].zone": [
+        "ru-central1-c"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[3].name": [
+        "host_name_c_2"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.host[3].subnet_id": [
+        "yandex_vpc_subnet.c.id"
+    ],
+    "resource.yandex_vpc_subnet.a.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_vpc_subnet.a.network_id": [
+        "yandex_vpc_network.foo.id"
+    ],
+    "resource.yandex_vpc_subnet.a.v4_cidr_blocks[0]": [
+        "10.1.0.0/24"
+    ],
+    "resource.yandex_vpc_subnet.b.zone": [
+        "ru-central1-b"
+    ],
+    "resource.yandex_vpc_subnet.b.network_id": [
+        "yandex_vpc_network.foo.id"
+    ],
+    "resource.yandex_vpc_subnet.b.v4_cidr_blocks[0]": [
+        "10.2.0.0/24"
+    ],
+    "resource.yandex_vpc_subnet.c.zone": [
+        "ru-central1-c"
+    ],
+    "resource.yandex_vpc_subnet.c.network_id": [
+        "yandex_vpc_network.foo.id"
+    ],
+    "resource.yandex_vpc_subnet.c.v4_cidr_blocks[0]": [
+        "10.3.0.0/24"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.restore.backup_id": [
+        "c9q99999999999999994cm:base_000000010000005F000000B4"
+    ],
+    "resource.yandex_mdb_postgresql_cluster.foo.restore.time": [
+        "2021-02-11T15:04:05"
+    ],
+    "resource.yandex_mdb_postgresql_database.foo.cluster_id": [
+        "yandex_mdb_postgresql_cluster.foo.id"
+    ],
+    "resource.yandex_mdb_postgresql_database.foo.name": [
+        "testdb"
+    ],
+    "resource.yandex_mdb_postgresql_database.foo.owner": [
+        "yandex_mdb_postgresql_user.alice.name"
+    ],
+    "resource.yandex_mdb_postgresql_database.foo.lc_collate": [
+        "en_US.UTF-8"
+    ],
+    "resource.yandex_mdb_postgresql_database.foo.lc_type": [
+        "en_US.UTF-8"
+    ],
+    "resource.yandex_mdb_postgresql_database.foo.extension[0].name": [
+        "uuid-ossp"
+    ],
+    "resource.yandex_mdb_postgresql_database.foo.extension[1].name": [
+        "xml2"
+    ],
+    "resource.yandex_mdb_postgresql_user.foo.cluster_id": [
+        "yandex_mdb_postgresql_cluster.foo.id"
+    ],
+    "resource.yandex_mdb_postgresql_user.foo.name": [
+        "alice"
+    ],
+    "resource.yandex_mdb_postgresql_user.foo.password": [
+        "password"
+    ],
+    "resource.yandex_mdb_postgresql_user.foo.conn_limit": [
+        50
+    ],
+    "resource.yandex_mdb_postgresql_user.foo.settings.default_transaction_isolation": [
+        "read committed"
+    ],
+    "resource.yandex_mdb_postgresql_user.foo.settings.log_min_duration_statement": [
+        5000
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.name": [
+        "test"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.environment": [
+        "PRESTABLE"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.network_id": [
+        "${yandex_vpc_network.foo.id}"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.config.password": [
+        "your_password"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.config.version": [
+        "6.2"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.resources.resource_preset_id": [
+        "hm1.nano"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.resources.disk_size": [
+        16
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.host.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.host.subnet_id": [
+        "${yandex_vpc_subnet.foo.id}"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.maintenance_window.type": [
+        "ANYTIME"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.sharded": [
+        true
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.host[0].zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.host[0].subnet_id": [
+        "${yandex_vpc_subnet.foo.id}"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.host[0].shard_name": [
+        "first"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.host[1].zone": [
+        "ru-central1-b"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.host[1].subnet_id": [
+        "${yandex_vpc_subnet.bar.id}"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.host[1].shard_name": [
+        "second"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.host[2].zone": [
+        "ru-central1-c"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.host[2].subnet_id": [
+        "${yandex_vpc_subnet.baz.id}"
+    ],
+    "resource.yandex_mdb_redis_cluster.foo.host[2].shard_name": [
+        "third"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.name": [
+        "test"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.environment": [
+        "PRESTABLE"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.network_id": [
+        "yandex_vpc_network.foo.id"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.version": [
+        "2016sp2std"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.resources.resource_preset_id": [
+        "s2.small"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.resources.disk_type_id": [
+        "network-ssd"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.resources.disk_size": [
+        20
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.labels.test_key": [
+        "test_value"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.backup_window_start.hours": [
+        20
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.backup_window_start.minutes": [
+        30
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.sqlserver_config.fill_factor_percent": [
+        49
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.sqlserver_config.optimize_for_ad_hoc_workloads": [
+        true
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.database[0].name": [
+        "db_name_a"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.database[1].name": [
+        "db_name"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.database[2].name": [
+        "db_name_b"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[0].name": [
+        "bob"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[0].password": [
+        "mysecurepassword"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[1].name": [
+        "alice"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[1].password": [
+        "mysecurepassword"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[1].permission.database_name": [
+        "db_name"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[1].permission.roles[0]": [
+        "DDLADMIN"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[2].name": [
+        "chuck"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[2].password": [
+        "mysecurepassword"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[2].permission[0].database_name": [
+        "db_name_a"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[2].permission[0].roles[0]": [
+        "OWNER"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[2].permission[1].database_name": [
+        "db_name"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[2].permission[1].roles[0]": [
+        "OWNER"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[2].permission[1].roles[1]": [
+        "DDLADMIN"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[2].permission[2].database_name": [
+        "db_name_b"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[2].permission[2].roles[0]": [
+        "OWNER"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.user[2].permission[2].roles[1]": [
+        "DDLADMIN"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.host.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.host.subnet_id": [
+        "yandex_vpc_subnet.foo.id"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.security_group_ids[0]": [
+        "yandex_vpc_security_group.test-sg-x.id"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.host_group_ids[0]": [
+        "host_group_1"
+    ],
+    "resource.yandex_mdb_sqlserver_cluster.foo.host_group_ids[1]": [
+        "host_group_2"
+    ],
+    "resource.yandex_message_queue.example_fifo_queue.name": [
+        "ymq_terraform_fifo_example.fifo"
+    ],
+    "resource.yandex_message_queue.example_fifo_queue.fifo_queue": [
+        true
+    ],
+    "resource.yandex_message_queue.example_fifo_queue.content_based_deduplication": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.name": [
+        "local-id-resource"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.description": [
+        "Description"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.title": [
+        "My title"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.labels.a": [
+        "b"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.selectors": [
+        "a=b"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[0].description": [
+        "param1 description"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[0].title": [
+        "title"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[0].hidden": [
+        false
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[0].id": [
+        "param1"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[0].custom.default_values[0]": [
+        "1"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[0].custom.default_values[1]": [
+        "2"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[0].custom.values[0]": [
+        "1"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[0].custom.values[1]": [
+        "2"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[0].custom.values[2]": [
+        "3"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[0].custom.multiselectable": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[1].hidden": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[1].id": [
+        "param2"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[1].label_values.default_values[0]": [
+        "1"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[1].label_values.default_values[1]": [
+        "2"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[1].label_values.multiselectable": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[1].label_values.label_key": [
+        "key"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[1].label_values.selectors": [
+        "a=b"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[2].hidden": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[2].id": [
+        "param3"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.parametrization.parameters[2].text.default_value": [
+        "abc"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[0].text.text": [
+        "text here"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[0].position.h": [
+        1
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[0].position.w": [
+        1
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[0].position.x": [
+        4
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[0].position.y": [
+        4
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.description": [
+        "chart description"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.title": [
+        "title for chart"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.chart_id": [
+        "chart1id"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.display_legend": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.freeze": [
+        "FREEZE_DURATION_HOUR"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.name_hiding_settings.names[0]": [
+        "a"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.name_hiding_settings.names[1]": [
+        "b"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.name_hiding_settings.positive": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.queries.downsampling.disabled": [
+        false
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.queries.downsampling.gap_filling": [
+        "GAP_FILLING_NULL"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.queries.downsampling.grid_aggregation": [
+        "GRID_AGGREGATION_COUNT"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.queries.downsampling.max_points": [
+        100
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.queries.target.hidden": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.queries.target.text_mode": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.queries.target.query": [
+        "{service=monitoring}"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.series_overrides.name": [
+        "name"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.series_overrides.settings.color": [
+        "colorValue"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.series_overrides.settings.grow_down": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.series_overrides.settings.name": [
+        "series_overrides name"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.series_overrides.settings.type": [
+        "SERIES_VISUALIZATION_TYPE_LINE"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.series_overrides.settings.yaxis_position": [
+        "YAXIS_POSITION_LEFT"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.series_overrides.settings.stack_name": [
+        "stack name"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.aggregation": [
+        "SERIES_AGGREGATION_AVG"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.interpolate": [
+        "INTERPOLATE_LEFT"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.type": [
+        "VISUALIZATION_TYPE_POINTS"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.normalize": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.show_labels": [
+        true
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.title": [
+        "visualization_settings title"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.color_scheme_settings.gradient.green_value": [
+        "11"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.color_scheme_settings.gradient.red_value": [
+        "22"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.color_scheme_settings.gradient.violet_value": [
+        "33"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.color_scheme_settings.gradient.yellow_value": [
+        "44"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.heatmap_settings.green_value": [
+        "1"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.heatmap_settings.red_value": [
+        "2"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.heatmap_settings.violet_value": [
+        "3"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.heatmap_settings.yellow_value": [
+        "4"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.left.max": [
+        "111"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.left.min": [
+        "11"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.left.title": [
+        "yaxis_settings left title"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.left.precision": [
+        3
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.left.type": [
+        "YAXIS_TYPE_LOGARITHMIC"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.left.unit_format": [
+        "UNIT_CELSIUS"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.right.max": [
+        "22"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.right.min": [
+        "2"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.right.title": [
+        "yaxis_settings right title"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.right.precision": [
+        2
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.right.type": [
+        "YAXIS_TYPE_LOGARITHMIC"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].chart.visualization_settings.yaxis_settings.right.unit_format": [
+        "UNIT_NONE"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].position.h": [
+        100
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].position.w": [
+        100
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].position.x": [
+        6
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[1].position.y": [
+        6
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[2].title.text": [
+        "title here"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[2].title.size": [
+        "TITLE_SIZE_XS"
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[2].position.h": [
+        1
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[2].position.w": [
+        1
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[2].position.x": [
+        1
+    ],
+    "resource.yandex_monitoring_dashboard.my-dashboard.widgets[2].position.y": [
+        1
+    ],
+    "resource.yandex_organizationmanager_group.group.name": [
+        "my-group"
+    ],
+    "resource.yandex_organizationmanager_group.group.description": [
+        "My new Group"
+    ],
+    "resource.yandex_organizationmanager_group.group.organization_id": [
+        "sdf4*********3fr"
+    ],
+    "resource.yandex_organizationmanager_group_iam_member.editor.group_id": [
+        "some_group_id"
+    ],
+    "resource.yandex_organizationmanager_group_iam_member.editor.role": [
+        "editor"
+    ],
+    "resource.yandex_organizationmanager_group_iam_member.editor.member": [
+        "userAccount:user_id"
+    ],
+    "resource.yandex_organizationmanager_group_membership.group.group_id": [
+        "sdf4*********3fr"
+    ],
+    "resource.yandex_organizationmanager_group_membership.group.members[0]": [
+        "xdf********123"
+    ],
+    "resource.yandex_organizationmanager_organization_iam_binding.editor.organization_id": [
+        "some_organization_id"
+    ],
+    "resource.yandex_organizationmanager_organization_iam_binding.editor.role": [
+        "editor"
+    ],
+    "resource.yandex_organizationmanager_organization_iam_binding.editor.members[0]": [
+        "userAccount:some_user_id"
+    ],
+    "resource.yandex_organizationmanager_organization_iam_member.editor.organization_id": [
+        "some_organization_id"
+    ],
+    "resource.yandex_organizationmanager_organization_iam_member.editor.role": [
+        "editor"
+    ],
+    "resource.yandex_organizationmanager_organization_iam_member.editor.member": [
+        "userAccount:user_id"
+    ],
+    "resource.yandex_organizationmanager_saml_federation.federation.name": [
+        "my-federation"
+    ],
+    "resource.yandex_organizationmanager_saml_federation.federation.description": [
+        "My new SAML federation"
+    ],
+    "resource.yandex_organizationmanager_saml_federation.federation.organization_id": [
+        "sdf4*********3fr"
+    ],
+    "resource.yandex_organizationmanager_saml_federation.federation.sso_url": [
+        "https://my-sso.url"
+    ],
+    "resource.yandex_organizationmanager_saml_federation.federation.issuer": [
+        "my-issuer"
+    ],
+    "resource.yandex_organizationmanager_saml_federation.federation.sso_binding": [
+        "POST"
+    ],
+    "resource.yandex_resourcemanager_cloud.cloud1.organization_id": [
+        "my_organization_id"
+    ],
+    "data.yandex_resourcemanager_cloud.project1.name": [
+        "Project 1"
+    ],
+    "resource.yandex_resourcemanager_cloud_iam_binding.admin.cloud_id": [
+        "${data.yandex_resourcemanager_cloud.project1.id}"
+    ],
+    "resource.yandex_resourcemanager_cloud_iam_binding.admin.role": [
+        "editor"
+    ],
+    "resource.yandex_resourcemanager_cloud_iam_binding.admin.members[0]": [
+        "userAccount:some_user_id"
+    ],
+    "data.yandex_resourcemanager_cloud.department1.name": [
+        "Department 1"
+    ],
+    "resource.yandex_resourcemanager_cloud_iam_member.admin.cloud_id": [
+        "${data.yandex_resourcemanager_cloud.department1.id}"
+    ],
+    "resource.yandex_resourcemanager_cloud_iam_member.admin.role": [
+        "editor"
+    ],
+    "resource.yandex_resourcemanager_cloud_iam_member.admin.member": [
+        "userAccount:user_id"
+    ],
+    "resource.yandex_resourcemanager_folder.folder1.cloud_id": [
+        "my_cloud_id"
+    ],
+    "data.yandex_resourcemanager_folder.project1.folder_id": [
+        "some_folder_id",
+        "my_folder_id"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_binding.admin.folder_id": [
+        "${data.yandex_resourcemanager_folder.project1.id}"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_binding.admin.role": [
+        "editor"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_binding.admin.members[0]": [
+        "userAccount:some_user_id"
+    ],
+    "data.yandex_resourcemanager_folder.department1.folder_id": [
+        "some_folder_id"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_member.admin.folder_id": [
+        "${data.yandex_resourcemanager.department1.name}"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_member.admin.role": [
+        "editor"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_member.admin.member": [
+        "userAccount:user_id"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_policy.folder_admin_policy.folder_id": [
+        "${data.yandex_folder.project1.id}"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_policy.folder_admin_policy.policy_data": [
+        "${data.yandex_iam_policy.admin.policy_data}"
+    ],
+    "resource.yandex_serverless_container.test-container.name": [
+        "some_name"
+    ],
+    "resource.yandex_serverless_container.test-container.description": [
+        "any description"
+    ],
+    "resource.yandex_serverless_container.test-container.memory": [
+        256
+    ],
+    "resource.yandex_serverless_container.test-container.execution_timeout": [
+        "15s"
+    ],
+    "resource.yandex_serverless_container.test-container.cores": [
+        1
+    ],
+    "resource.yandex_serverless_container.test-container.core_fraction": [
+        100
+    ],
+    "resource.yandex_serverless_container.test-container.service_account_id": [
+        "are1service2account3id"
+    ],
+    "resource.yandex_serverless_container.test-container.secrets.id": [
+        "${yandex_lockbox_secret.secret.id}"
+    ],
+    "resource.yandex_serverless_container.test-container.secrets.version_id": [
+        "${yandex_lockbox_secret_version.secret_version.id}"
+    ],
+    "resource.yandex_serverless_container.test-container.secrets.key": [
+        "secret-key"
+    ],
+    "resource.yandex_serverless_container.test-container.secrets.environment_variable": [
+        "ENV_VARIABLE"
+    ],
+    "resource.yandex_serverless_container.test-container.image.url": [
+        "cr.yandex/yc/test-image:v1"
+    ],
+    "resource.yandex_serverless_container.test-container-with-digest.name": [
+        "some_name"
+    ],
+    "resource.yandex_serverless_container.test-container-with-digest.memory": [
+        128
+    ],
+    "resource.yandex_serverless_container.test-container-with-digest.image.url": [
+        "cr.yandex/yc/test-image:v1"
+    ],
+    "resource.yandex_serverless_container.test-container-with-digest.image.digest": [
+        "sha256:e1d772fa8795adac847a2420c87d0d2e3d38fb02f168cab8c0b5fe2fb95c47f4"
+    ],
+    "resource.yandex_serverless_container_iam_binding.container-iam.container_id": [
+        "your-container-id"
+    ],
+    "resource.yandex_serverless_container_iam_binding.container-iam.role": [
+        "serverless.containers.invoker"
+    ],
+    "resource.yandex_serverless_container_iam_binding.container-iam.members[0]": [
+        "system:allUsers"
+    ],
+    "locals.folder_id": [
+        "<folder-id>"
+    ],
+    "resource.yandex_iam_service_account.sa.folder_id": [
+        "local.folder_id"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_member.sa-editor.folder_id": [
+        "local.folder_id"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_member.sa-editor.role": [
+        "storage.editor"
+    ],
+    "resource.yandex_resourcemanager_folder_iam_member.sa-editor.member": [
+        "serviceAccount:${yandex_iam_service_account.sa.id}"
+    ],
+    "resource.yandex_storage_bucket.test.access_key": [
+        "yandex_iam_service_account_static_access_key.sa-static-key.access_key"
+    ],
+    "resource.yandex_storage_bucket.test.secret_key": [
+        "yandex_iam_service_account_static_access_key.sa-static-key.secret_key"
+    ],
+    "resource.yandex_storage_bucket.test.bucket": [
+        "tf-test-bucket",
+        "storage-website-test.hashicorp.com",
+        "mybucket"
+    ],
+    "resource.yandex_storage_bucket.test.acl": [
+        "public-read"
+    ],
+    "resource.yandex_storage_bucket.test.website.index_document": [
+        "index.html"
+    ],
+    "resource.yandex_storage_bucket.test.website.error_document": [
+        "error.html"
+    ],
+    "resource.yandex_storage_bucket.test.website.routing_rules": [
+        "[{\n    \"Condition\": {\n        \"KeyPrefixEquals\": \"docs/\"\n    },\n    \"Redirect\": {\n        \"ReplaceKeyPrefixWith\": \"documents/\"\n    }\n}]"
+    ],
+    "resource.yandex_storage_bucket.test.grant[0].id": [
+        "myuser"
+    ],
+    "resource.yandex_storage_bucket.test.grant[0].type": [
+        "CanonicalUser"
+    ],
+    "resource.yandex_storage_bucket.test.grant[0].permissions[0]": [
+        "FULL_CONTROL"
+    ],
+    "resource.yandex_storage_bucket.test.grant[1].type": [
+        "Group"
+    ],
+    "resource.yandex_storage_bucket.test.grant[1].permissions[0]": [
+        "READ"
+    ],
+    "resource.yandex_storage_bucket.test.grant[1].permissions[1]": [
+        "WRITE"
+    ],
+    "resource.yandex_storage_bucket.test.grant[1].uri": [
+        "http://acs.amazonaws.com/groups/global/AllUsers"
+    ],
+    "resource.yandex_storage_bucket.b.bucket": [
+        "s3-website-test.hashicorp.com",
+        "my-tf-test-bucket",
+        "my-policy-bucket"
+    ],
+    "resource.yandex_storage_bucket.b.acl": [
+        "public-read",
+        "private"
+    ],
+    "resource.yandex_storage_bucket.b.cors_rule.allowed_headers[0]": [
+        "*"
+    ],
+    "resource.yandex_storage_bucket.b.cors_rule.allowed_methods[0]": [
+        "PUT"
+    ],
+    "resource.yandex_storage_bucket.b.cors_rule.allowed_methods[1]": [
+        "POST"
+    ],
+    "resource.yandex_storage_bucket.b.cors_rule.allowed_origins[0]": [
+        "https://s3-website-test.hashicorp.com"
+    ],
+    "resource.yandex_storage_bucket.b.cors_rule.expose_headers[0]": [
+        "ETag"
+    ],
+    "resource.yandex_storage_bucket.b.cors_rule.max_age_seconds": [
+        3000
+    ],
+    "resource.yandex_storage_bucket.b.versioning.enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.b.object_lock_configuration.object_lock_enabled": [
+        "Enabled"
+    ],
+    "resource.yandex_storage_bucket.b.object_lock_configuration.rule.default_retention.mode": [
+        "GOVERNANCE"
+    ],
+    "resource.yandex_storage_bucket.b.object_lock_configuration.rule.default_retention.years": [
+        1
+    ],
+    "resource.yandex_storage_bucket.log_bucket.bucket": [
+        "my-tf-log-bucket"
+    ],
+    "resource.yandex_storage_bucket.b.logging.target_bucket": [
+        "yandex_storage_bucket.log_bucket.id"
+    ],
+    "resource.yandex_storage_bucket.b.logging.target_prefix": [
+        "log/"
+    ],
+    "resource.yandex_storage_bucket.bucket.bucket": [
+        "my-bucket"
+    ],
+    "resource.yandex_storage_bucket.bucket.acl": [
+        "private"
+    ],
+    "resource.yandex_storage_bucket.bucket.lifecycle_rule[0].id": [
+        "log"
+    ],
+    "resource.yandex_storage_bucket.bucket.lifecycle_rule[0].enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.bucket.lifecycle_rule[0].prefix": [
+        "log/"
+    ],
+    "resource.yandex_storage_bucket.bucket.lifecycle_rule[0].transition.days": [
+        30
+    ],
+    "resource.yandex_storage_bucket.bucket.lifecycle_rule[0].transition.storage_class": [
+        "COLD"
+    ],
+    "resource.yandex_storage_bucket.bucket.lifecycle_rule[0].expiration.days": [
+        90
+    ],
+    "resource.yandex_storage_bucket.bucket.lifecycle_rule[1].id": [
+        "tmp"
+    ],
+    "resource.yandex_storage_bucket.bucket.lifecycle_rule[1].prefix": [
+        "tmp/"
+    ],
+    "resource.yandex_storage_bucket.bucket.lifecycle_rule[1].enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.bucket.lifecycle_rule[1].expiration.date": [
+        "2020-12-21"
+    ],
+    "resource.yandex_storage_bucket.versioning_bucket.bucket": [
+        "my-versioning-bucket"
+    ],
+    "resource.yandex_storage_bucket.versioning_bucket.acl": [
+        "private"
+    ],
+    "resource.yandex_storage_bucket.versioning_bucket.versioning.enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.versioning_bucket.lifecycle_rule.prefix": [
+        "config/"
+    ],
+    "resource.yandex_storage_bucket.versioning_bucket.lifecycle_rule.enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.versioning_bucket.lifecycle_rule.noncurrent_version_transition.days": [
+        30
+    ],
+    "resource.yandex_storage_bucket.versioning_bucket.lifecycle_rule.noncurrent_version_transition.storage_class": [
+        "COLD"
+    ],
+    "resource.yandex_storage_bucket.versioning_bucket.lifecycle_rule.noncurrent_version_expiration.days": [
+        90
+    ],
+    "resource.yandex_storage_bucket.test.server_side_encryption_configuration.rule.apply_server_side_encryption_by_default.kms_master_key_id": [
+        "yandex_kms_symmetric_key.key-a.id"
+    ],
+    "resource.yandex_storage_bucket.test.server_side_encryption_configuration.rule.apply_server_side_encryption_by_default.sse_algorithm": [
+        "aws:kms"
+    ],
+    "resource.yandex_storage_bucket.b.policy": [
+        "{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Effect\": \"Allow\",\n      \"Principal\": \"*\",\n      \"Action\": \"s3:*\",\n      \"Resource\": [\n        \"arn:aws:s3:::my-policy-bucket/*\",\n        \"arn:aws:s3:::my-policy-bucket\"\n      ]\n    },\n    {\n      \"Effect\": \"Deny\",\n      \"Principal\": \"*\",\n      \"Action\": \"s3:PutObject\",\n      \"Resource\": [\n        \"arn:aws:s3:::my-policy-bucket/*\",\n        \"arn:aws:s3:::my-policy-bucket\"\n      ]\n    }\n  ]\n}"
+    ],
+    "resource.yandex_storage_bucket.b.max_size": [
+        1048576
+    ],
+    "resource.yandex_storage_bucket.b.folder_id": [
+        "<folder_id>"
+    ],
+    "resource.yandex_storage_bucket.b.anonymous_access_flags.read": [
+        true
+    ],
+    "resource.yandex_storage_bucket.b.anonymous_access_flags.list": [
+        false
+    ],
+    "resource.yandex_storage_bucket.b.anonymous_access_flags.config_read": [
+        true
+    ],
+    "resource.yandex_storage_bucket.b.https.certificate_id": [
+        "<certificate_id_from_certificate_manager>"
+    ],
+    "resource.yandex_storage_bucket.b.default_storage_class": [
+        "COLD"
+    ],
+    "provider.yandex.storage_access_key": [
+        "<storage-access-key>"
+    ],
+    "provider.yandex.storage_secret_key": [
+        "<storage-secret-key>"
+    ],
+    "resource.yandex_storage_bucket.log_bucket.lifecycle_rule.id": [
+        "cleanupoldlogs"
+    ],
+    "resource.yandex_storage_bucket.log_bucket.lifecycle_rule.enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.log_bucket.lifecycle_rule.expiration.days": [
+        365
+    ],
+    "resource.yandex_storage_bucket.all_settings.bucket": [
+        "example-tf-settings-bucket"
+    ],
+    "resource.yandex_storage_bucket.all_settings.website.index_document": [
+        "index.html"
+    ],
+    "resource.yandex_storage_bucket.all_settings.website.error_document": [
+        "error.html"
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[0].id": [
+        "test"
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[0].enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[0].prefix": [
+        "prefix/"
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[0].expiration.days": [
+        30
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[1].id": [
+        "log"
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[1].enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[1].prefix": [
+        "log/"
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[1].transition.days": [
+        30
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[1].transition.storage_class": [
+        "COLD"
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[1].expiration.days": [
+        90
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[2].id": [
+        "everything180"
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[2].prefix": [
+        ""
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[2].enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[2].expiration.days": [
+        180
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[3].id": [
+        "cleanupoldversions"
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[3].prefix": [
+        "config/"
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[3].enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[3].noncurrent_version_transition.days": [
+        30
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[3].noncurrent_version_transition.storage_class": [
+        "COLD"
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[3].noncurrent_version_expiration.days": [
+        90
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[4].id": [
+        "abortmultiparts"
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[4].prefix": [
+        ""
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[4].enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.all_settings.lifecycle_rule[4].abort_incomplete_multipart_upload_days": [
+        7
+    ],
+    "resource.yandex_storage_bucket.all_settings.cors_rule.allowed_headers[0]": [
+        "*"
+    ],
+    "resource.yandex_storage_bucket.all_settings.cors_rule.allowed_methods[0]": [
+        "GET"
+    ],
+    "resource.yandex_storage_bucket.all_settings.cors_rule.allowed_methods[1]": [
+        "PUT"
+    ],
+    "resource.yandex_storage_bucket.all_settings.cors_rule.allowed_origins[0]": [
+        "https://storage-cloud.example.com"
+    ],
+    "resource.yandex_storage_bucket.all_settings.cors_rule.expose_headers[0]": [
+        "ETag"
+    ],
+    "resource.yandex_storage_bucket.all_settings.cors_rule.max_age_seconds": [
+        3000
+    ],
+    "resource.yandex_storage_bucket.all_settings.versioning.enabled": [
+        true
+    ],
+    "resource.yandex_storage_bucket.all_settings.server_side_encryption_configuration.rule.apply_server_side_encryption_by_default.kms_master_key_id": [
+        "yandex_kms_symmetric_key.key-a.id"
+    ],
+    "resource.yandex_storage_bucket.all_settings.server_side_encryption_configuration.rule.apply_server_side_encryption_by_default.sse_algorithm": [
+        "aws:kms"
+    ],
+    "resource.yandex_storage_bucket.all_settings.logging.target_bucket": [
+        "yandex_storage_bucket.log_bucket.id"
+    ],
+    "resource.yandex_storage_bucket.all_settings.logging.target_prefix": [
+        "tf-logs/"
+    ],
+    "resource.yandex_storage_bucket.all_settings.max_size": [
+        1024
+    ],
+    "resource.yandex_storage_bucket.all_settings.folder_id": [
+        "<folder_id>"
+    ],
+    "resource.yandex_storage_bucket.all_settings.default_storage_class": [
+        "COLD"
+    ],
+    "resource.yandex_storage_bucket.all_settings.anonymous_access_flags.read": [
+        true
+    ],
+    "resource.yandex_storage_bucket.all_settings.anonymous_access_flags.list": [
+        true
+    ],
+    "resource.yandex_storage_bucket.all_settings.https.certificate_id": [
+        "<certificate_id>"
+    ],
+    "resource.yandex_storage_object.cute-cat-picture.bucket": [
+        "cat-pictures"
+    ],
+    "resource.yandex_storage_object.cute-cat-picture.key": [
+        "cute-cat"
+    ],
+    "resource.yandex_storage_object.cute-cat-picture.source": [
+        "/images/cats/cute-cat.jpg"
+    ],
+    "resource.yandex_vpc_address.addr.name": [
+        "exampleAddress"
+    ],
+    "resource.yandex_vpc_address.addr.external_ipv4_address.zone_id": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_vpc_address.vpnaddr.name": [
+        "vpnaddr"
+    ],
+    "resource.yandex_vpc_address.vpnaddr.external_ipv4_address.zone_id": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_vpc_address.vpnaddr.external_ipv4_address.ddos_protection_provider": [
+        "qrator"
+    ],
+    "resource.yandex_vpc_network.lab-net.name": [
+        "lab-network"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.description": [
+        "description for default security group"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.network_id": [
+        "${yandex_vpc_network.lab-net.id}"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.labels.my-label": [
+        "my-label-value"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.ingress.protocol": [
+        "TCP"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.ingress.description": [
+        "rule1 description"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.ingress.v4_cidr_blocks[0]": [
+        "10.0.1.0/24"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.ingress.v4_cidr_blocks[1]": [
+        "10.0.2.0/24"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.ingress.port": [
+        8080
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.egress[0].protocol": [
+        "ANY"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.egress[0].description": [
+        "rule2 description"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.egress[0].v4_cidr_blocks[0]": [
+        "10.0.1.0/24"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.egress[0].v4_cidr_blocks[1]": [
+        "10.0.2.0/24"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.egress[0].from_port": [
+        8090
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.egress[0].to_port": [
+        8099
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.egress[1].protocol": [
+        "UDP"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.egress[1].description": [
+        "rule3 description"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.egress[1].v4_cidr_blocks[0]": [
+        "10.0.1.0/24"
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.egress[1].from_port": [
+        8090
+    ],
+    "resource.yandex_vpc_default_security_group.default-sg.egress[1].to_port": [
+        8099
+    ],
+    "resource.yandex_vpc_gateway.default.name": [
+        "foobar"
+    ],
+    "resource.yandex_vpc_network.default.name": [
+        "foobar"
+    ],
+    "resource.yandex_vpc_gateway.egress-gateway.name": [
+        "egress-gateway"
+    ],
+    "resource.yandex_vpc_route_table.lab-rt-a.network_id": [
+        "${yandex_vpc_network.lab-net.id}"
+    ],
+    "resource.yandex_vpc_route_table.lab-rt-a.static_route[0].destination_prefix": [
+        "10.2.0.0/16"
+    ],
+    "resource.yandex_vpc_route_table.lab-rt-a.static_route[0].next_hop_address": [
+        "172.16.10.10"
+    ],
+    "resource.yandex_vpc_route_table.lab-rt-a.static_route[1].destination_prefix": [
+        "0.0.0.0/0"
+    ],
+    "resource.yandex_vpc_route_table.lab-rt-a.static_route[1].gateway_id": [
+        "${yandex_vpc_gateway.egress-gateway.id}"
+    ],
+    "resource.yandex_vpc_security_group.group1.name": [
+        "My security group"
+    ],
+    "resource.yandex_vpc_security_group.group1.description": [
+        "description for my security group"
+    ],
+    "resource.yandex_vpc_security_group.group1.network_id": [
+        "${yandex_vpc_network.lab-net.id}"
+    ],
+    "resource.yandex_vpc_security_group.group1.labels.my-label": [
+        "my-label-value"
+    ],
+    "resource.yandex_vpc_security_group.group1.ingress.protocol": [
+        "TCP"
+    ],
+    "resource.yandex_vpc_security_group.group1.ingress.description": [
+        "rule1 description"
+    ],
+    "resource.yandex_vpc_security_group.group1.ingress.v4_cidr_blocks[0]": [
+        "10.0.1.0/24"
+    ],
+    "resource.yandex_vpc_security_group.group1.ingress.v4_cidr_blocks[1]": [
+        "10.0.2.0/24"
+    ],
+    "resource.yandex_vpc_security_group.group1.ingress.port": [
+        8080
+    ],
+    "resource.yandex_vpc_security_group.group1.egress[0].protocol": [
+        "ANY"
+    ],
+    "resource.yandex_vpc_security_group.group1.egress[0].description": [
+        "rule2 description"
+    ],
+    "resource.yandex_vpc_security_group.group1.egress[0].v4_cidr_blocks[0]": [
+        "10.0.1.0/24"
+    ],
+    "resource.yandex_vpc_security_group.group1.egress[0].v4_cidr_blocks[1]": [
+        "10.0.2.0/24"
+    ],
+    "resource.yandex_vpc_security_group.group1.egress[0].from_port": [
+        8090
+    ],
+    "resource.yandex_vpc_security_group.group1.egress[0].to_port": [
+        8099
+    ],
+    "resource.yandex_vpc_security_group.group1.egress[1].protocol": [
+        "UDP"
+    ],
+    "resource.yandex_vpc_security_group.group1.egress[1].description": [
+        "rule3 description"
+    ],
+    "resource.yandex_vpc_security_group.group1.egress[1].v4_cidr_blocks[0]": [
+        "10.0.1.0/24"
+    ],
+    "resource.yandex_vpc_security_group.group1.egress[1].from_port": [
+        8090
+    ],
+    "resource.yandex_vpc_security_group.group1.egress[1].to_port": [
+        8099
+    ],
+    "resource.yandex_vpc_security_group_rule.rule1.security_group_binding": [
+        "yandex_vpc_security_group.group1.id"
+    ],
+    "resource.yandex_vpc_security_group_rule.rule1.direction": [
+        "ingress"
+    ],
+    "resource.yandex_vpc_security_group_rule.rule1.description": [
+        "rule1 description"
+    ],
+    "resource.yandex_vpc_security_group_rule.rule1.v4_cidr_blocks[0]": [
+        "10.0.1.0/24"
+    ],
+    "resource.yandex_vpc_security_group_rule.rule1.v4_cidr_blocks[1]": [
+        "10.0.2.0/24"
+    ],
+    "resource.yandex_vpc_security_group_rule.rule1.port": [
+        8080
+    ],
+    "resource.yandex_vpc_security_group_rule.rule1.protocol": [
+        "TCP"
+    ],
+    "resource.yandex_vpc_security_group_rule.rule2.security_group_binding": [
+        "yandex_vpc_security_group.group1.id"
+    ],
+    "resource.yandex_vpc_security_group_rule.rule2.direction": [
+        "egress"
+    ],
+    "resource.yandex_vpc_security_group_rule.rule2.description": [
+        "rule2 description"
+    ],
+    "resource.yandex_vpc_security_group_rule.rule2.v4_cidr_blocks[0]": [
+        "10.0.1.0/24"
+    ],
+    "resource.yandex_vpc_security_group_rule.rule2.from_port": [
+        8090
+    ],
+    "resource.yandex_vpc_security_group_rule.rule2.to_port": [
+        8099
+    ],
+    "resource.yandex_vpc_security_group_rule.rule2.protocol": [
+        "UDP"
+    ],
+    "resource.yandex_vpc_subnet.lab-subnet-a.v4_cidr_blocks[0]": [
+        "10.2.0.0/16"
+    ],
+    "resource.yandex_vpc_subnet.lab-subnet-a.zone": [
+        "ru-central1-a"
+    ],
+    "resource.yandex_vpc_subnet.lab-subnet-a.network_id": [
+        "${yandex_vpc_network.lab-net.id}"
+    ],
+    "resource.yandex_ydb_database_dedicated.database1.name": [
+        "test-ydb-dedicated"
+    ],
+    "resource.yandex_ydb_database_dedicated.database1.folder_id": [
+        "${data.yandex_resourcemanager_folder.test_folder.id}"
+    ],
+    "resource.yandex_ydb_database_dedicated.database1.network_id": [
+        "${yandex_vpc_network.my-inst-group-network.id}"
+    ],
+    "resource.yandex_ydb_database_dedicated.database1.subnet_ids[0]": [
+        "${yandex_vpc_subnet.my-inst-group-subnet.id}"
+    ],
+    "resource.yandex_ydb_database_dedicated.database1.resource_preset_id": [
+        "medium"
+    ],
+    "resource.yandex_ydb_database_dedicated.database1.deletion_protection": [
+        true
+    ],
+    "resource.yandex_ydb_database_dedicated.database1.scale_policy.fixed_scale.size": [
+        1
+    ],
+    "resource.yandex_ydb_database_dedicated.database1.storage_config.group_count": [
+        1
+    ],
+    "resource.yandex_ydb_database_dedicated.database1.storage_config.storage_type_id": [
+        "ssd"
+    ],
+    "resource.yandex_ydb_database_dedicated.database1.location.region.id": [
+        "ru-central1"
+    ],
+    "resource.yandex_ydb_database_serverless.database1.name": [
+        "test-ydb-serverless"
+    ],
+    "resource.yandex_ydb_database_serverless.database1.folder_id": [
+        "data.yandex_resourcemanager_folder.test_folder.id",
+        "${data.yandex_resourcemanager_folder.test_folder.id}"
+    ],
+    "resource.yandex_ydb_database_iam_binding.viewer.database_id": [
+        "yandex_ydb_database_serverless.database1.id"
+    ],
+    "resource.yandex_ydb_database_iam_binding.viewer.role": [
+        "ydb.viewer"
+    ],
+    "resource.yandex_ydb_database_iam_binding.viewer.members[0]": [
+        "userAccount:foo_user_id"
+    ],
+    "resource.yandex_ydb_database_serverless.database1.deletion_protection": [
+        true
+    ],
+    "resource.yandex_ydb_database_serverless.database_name.name": [
+        "database-name"
+    ],
+    "resource.yandex_ydb_database_serverless.database_name.location_id": [
+        "ru-central1"
+    ],
+    "resource.yandex_ydb_topic.topic.database_endpoint": [
+        "${yandex_ydb_database_serverless.database_name.ydb_full_endpoint}"
+    ],
+    "resource.yandex_ydb_topic.topic.name": [
+        "topic-test"
+    ],
+    "resource.yandex_ydb_topic.topic.supported_codecs[0]": [
+        "raw"
+    ],
+    "resource.yandex_ydb_topic.topic.supported_codecs[1]": [
+        "gzip"
+    ],
+    "resource.yandex_ydb_topic.topic.partitions_count": [
+        1
+    ],
+    "resource.yandex_ydb_topic.topic.retention_period_ms": [
+        2000000
+    ],
+    "resource.yandex_ydb_topic.topic.consumer.name": [
+        "consumer-name"
+    ],
+    "resource.yandex_ydb_topic.topic.consumer.supported_codecs[0]": [
+        "raw"
+    ],
+    "resource.yandex_ydb_topic.topic.consumer.supported_codecs[1]": [
+        "gzip"
+    ],
+    "resource.yandex_ydb_topic.topic.consumer.starting_message_timestamp_ms": [
+        0
+    ]
+}
