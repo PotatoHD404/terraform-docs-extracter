@@ -32,8 +32,8 @@ def extract_code_blocks_from_directory(directory_path, output_file_path):
 
 
 def main():
-    extract_code_blocks_from_directory(r"./docs/yandex",
-                                       "./results/yandex/1.json")
+    extract_code_blocks_from_directory(r"./docs/aws",
+                                       "./results/aws/1.json")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,628 @@
+{
+    "data.aws_appmesh_gateway_route.test.name": [
+        "test-route"
+    ],
+    "data.aws_appmesh_gateway_route.test.mesh_name": [
+        "test-mesh"
+    ],
+    "data.aws_appmesh_gateway_route.test.virtual_gateway_name": [
+        "test-gateway"
+    ],
+    "data.aws_appmesh_mesh.simple.name": [
+        "simpleapp"
+    ],
+    "data.aws_appmesh_mesh.simple.mesh_owner": [
+        "data.aws_caller_identity.current.account_id"
+    ],
+    "data.aws_appmesh_virtual_service.test.name": [
+        "test-route",
+        "example.mesh.local"
+    ],
+    "data.aws_appmesh_virtual_service.test.mesh_name": [
+        "test-mesh",
+        "example-mesh"
+    ],
+    "data.aws_appmesh_virtual_service.test.virtual_router_name": [
+        "test-router"
+    ],
+    "data.aws_appmesh_virtual_gateway.example.mesh_name": [
+        "mesh-gateway"
+    ],
+    "data.aws_appmesh_virtual_gateway.example.name": [
+        "example-mesh"
+    ],
+    "data.aws_appmesh_virtual_gateway.test.name": [
+        "example.mesh.local"
+    ],
+    "data.aws_appmesh_virtual_gateway.test.mesh_name": [
+        "example-mesh"
+    ],
+    "data.aws_appmesh_virtual_gateway.test.mesh_owner": [
+        "data.aws_caller_identity.current.account_id"
+    ],
+    "data.aws_appmesh_virtual_node.test.name": [
+        "serviceBv1"
+    ],
+    "data.aws_appmesh_virtual_node.test.mesh_name": [
+        "example-mesh"
+    ],
+    "data.aws_appmesh_virtual_router.test.name": [
+        "example-router-name"
+    ],
+    "data.aws_appmesh_virtual_router.test.mesh_name": [
+        "example-mesh-name"
+    ],
+    "data.aws_appmesh_virtual_service.test.mesh_owner": [
+        "data.aws_caller_identity.current.account_id"
+    ],
+    "data.aws_connect_contact_flow.test.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_contact_flow.test.name": [
+        "Test"
+    ],
+    "data.aws_connect_contact_flow.test.contact_flow_id": [
+        "cccccccc-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_contact_flow_module.example.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_contact_flow_module.example.name": [
+        "example"
+    ],
+    "data.aws_connect_contact_flow_module.example.contact_flow_module_id": [
+        "cccccccc-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_hours_of_operation.test.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_hours_of_operation.test.name": [
+        "Test"
+    ],
+    "data.aws_connect_hours_of_operation.test.hours_of_operation_id": [
+        "cccccccc-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_instance.foo.instance_alias": [
+        "foo"
+    ],
+    "data.aws_connect_instance.foo.instance_id": [
+        "97afc98d-101a-ba98-ab97-ae114fc115ec"
+    ],
+    "data.aws_connect_prompt.example.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_prompt.example.name": [
+        "Beep.wav"
+    ],
+    "data.aws_connect_queue.example.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_queue.example.name": [
+        "Example"
+    ],
+    "data.aws_connect_queue.example.queue_id": [
+        "cccccccc-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_quick_connect.example.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_quick_connect.example.name": [
+        "Example"
+    ],
+    "data.aws_connect_quick_connect.example.quick_connect_id": [
+        "cccccccc-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_routing_profile.example.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_routing_profile.example.name": [
+        "Example"
+    ],
+    "data.aws_connect_routing_profile.example.routing_profile_id": [
+        "cccccccc-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_security_profile.example.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_security_profile.example.name": [
+        "Example"
+    ],
+    "data.aws_connect_security_profile.example.security_profile_id": [
+        "cccccccc-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_user.example.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_user.example.name": [
+        "Example"
+    ],
+    "data.aws_connect_user.example.user_id": [
+        "cccccccc-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_user_hierarchy_group.example.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_user_hierarchy_group.example.name": [
+        "Example"
+    ],
+    "data.aws_connect_user_hierarchy_group.example.hierarchy_group_id": [
+        "cccccccc-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_user_hierarchy_structure.test.instance_id": [
+        "aws_connect_instance.test.id"
+    ],
+    "data.aws_connect_vocabulary.example.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_connect_vocabulary.example.name": [
+        "Example"
+    ],
+    "data.aws_connect_vocabulary.example.vocabulary_id": [
+        "cccccccc-bbbb-cccc-dddd-111111111111"
+    ],
+    "data.aws_dx_connection.example.name": [
+        "tf-dx-connection"
+    ],
+    "data.aws_dx_location.example.location_code": [
+        "CS32A-24FL"
+    ],
+    "data.aws_ec2_client_vpn_endpoint.example.filter.name": [
+        "tag:Name"
+    ],
+    "data.aws_ec2_client_vpn_endpoint.example.filter.values[0]": [
+        "ExampleVpn"
+    ],
+    "data.aws_ec2_client_vpn_endpoint.example.client_vpn_endpoint_id": [
+        "cvpn-endpoint-083cf50d6eb314f21"
+    ],
+    "data.aws_ec2_transit_gateway_attachments.filtered.filter[0].name": [
+        "state"
+    ],
+    "data.aws_ec2_transit_gateway_attachments.filtered.filter[0].values[0]": [
+        "pendingAcceptance"
+    ],
+    "data.aws_ec2_transit_gateway_attachments.filtered.filter[1].name": [
+        "resource-type"
+    ],
+    "data.aws_ec2_transit_gateway_attachments.filtered.filter[1].values[0]": [
+        "vpc"
+    ],
+    "data.aws_ec2_transit_gateway_attachment.unit.count": [
+        "length(data.aws_ec2_transit_gateway_attachments.filtered.ids)"
+    ],
+    "data.aws_ec2_transit_gateway_attachment.unit.id": [
+        "data.aws_ec2_transit_gateway_attachments.filtered.ids[count.index]"
+    ],
+    "data.aws_ec2_transit_gateway_vpc_attachments.filtered.filter.name": [
+        "state"
+    ],
+    "data.aws_ec2_transit_gateway_vpc_attachments.filtered.filter.values[0]": [
+        "pendingAcceptance"
+    ],
+    "data.aws_ec2_transit_gateway_vpc_attachment.unit.count": [
+        "length(data.aws_ec2_transit_gateway_vpc_attachments.filtered.ids)"
+    ],
+    "data.aws_ec2_transit_gateway_vpc_attachment.unit.id": [
+        "data.aws_ec2_transit_gateway_vpc_attachments.filtered.ids[count.index]"
+    ],
+    "data.aws_elasticache_user.bar.user_id": [
+        "example"
+    ],
+    "data.aws_iam_saml_provider.example.arn": [
+        "arn:aws:iam::123456789:saml-provider/myprovider"
+    ],
+    "data.aws_kendra_experience.example.experience_id": [
+        "87654321-1234-4321-4321-321987654321"
+    ],
+    "data.aws_kendra_experience.example.index_id": [
+        "12345678-1234-1234-1234-123456789123"
+    ],
+    "data.aws_kendra_faq.test.faq_id": [
+        "87654321-1234-4321-4321-321987654321"
+    ],
+    "data.aws_kendra_faq.test.index_id": [
+        "12345678-1234-1234-1234-123456789123"
+    ],
+    "data.aws_kendra_index.example.id": [
+        "12345678-1234-1234-1234-123456789123"
+    ],
+    "data.aws_kendra_query_suggestions_block_list.example.index_id": [
+        "12345678-1234-1234-1234-123456789123"
+    ],
+    "data.aws_kendra_query_suggestions_block_list.example.query_suggestions_block_list_id": [
+        "87654321-1234-4321-4321-321987654321"
+    ],
+    "data.aws_kendra_thesaurus.example.index_id": [
+        "12345678-1234-1234-1234-123456789123"
+    ],
+    "data.aws_kendra_thesaurus.example.thesaurus_id": [
+        "87654321-1234-4321-4321-321987654321"
+    ],
+    "data.aws_networkfirewall_firewall.example.arn": [
+        "aws_networkfirewall_firewall.arn"
+    ],
+    "data.aws_networkfirewall_firewall.example.name": [
+        "Test"
+    ],
+    "data.aws_service.test.region": [
+        "data.aws_region.current.name"
+    ],
+    "data.aws_service.test.service_id": [
+        "ec2"
+    ],
+    "data.aws_service.s3.reverse_dns_name": [
+        "cn.com.amazonaws.cn-north-1.s3",
+        "com.amazonaws.us-gov-west-1.waf"
+    ],
+    "data.aws_service_discovery_dns_namespace.test.name": [
+        "example.terraform.local"
+    ],
+    "data.aws_service_discovery_dns_namespace.test.type": [
+        "DNS_PRIVATE"
+    ],
+    "data.aws_service_discovery_service.test.name": [
+        "example"
+    ],
+    "data.aws_service_discovery_service.test.namespace_id": [
+        "NAMESPACE_ID_VALUE"
+    ],
+    "data.aws_wafregional_subscribed_rule_group.by_name.name": [
+        "F5 Bot Detection Signatures For AWS WAF"
+    ],
+    "data.aws_wafregional_subscribed_rule_group.by_metric_name.metric_name": [
+        "F5BotDetectionSignatures"
+    ],
+    "resource.aws_wafregional_web_acl.acl.rules[0].priority": [
+        1
+    ],
+    "resource.aws_wafregional_web_acl.acl.rules[0].rule_id": [
+        "data.aws_wafregional_subscribed_rule_group.by_name.id"
+    ],
+    "resource.aws_wafregional_web_acl.acl.rules[0].type": [
+        "GROUP"
+    ],
+    "resource.aws_wafregional_web_acl.acl.rules[1].priority": [
+        2
+    ],
+    "resource.aws_wafregional_web_acl.acl.rules[1].rule_id": [
+        "data.aws_wafregional_subscribed_rule_group.by_metric_name.id"
+    ],
+    "resource.aws_wafregional_web_acl.acl.rules[1].type": [
+        "GROUP"
+    ],
+    "resource.aws_batch_compute_environment.test.compute_environment_name": [
+        "test"
+    ],
+    "resource.aws_batch_compute_environment.test.compute_resources.instance_role": [
+        "aws_iam_instance_profile.ecs_instance.arn"
+    ],
+    "resource.aws_batch_compute_environment.test.compute_resources.instance_type[0]": [
+        "c4.large"
+    ],
+    "resource.aws_batch_compute_environment.test.compute_resources.max_vcpus": [
+        16
+    ],
+    "resource.aws_batch_compute_environment.test.compute_resources.min_vcpus": [
+        0
+    ],
+    "resource.aws_batch_compute_environment.test.compute_resources.security_group_ids[0]": [
+        "aws_security_group.test.id"
+    ],
+    "resource.aws_batch_compute_environment.test.compute_resources.subnets[0]": [
+        "aws_subnet.test.id"
+    ],
+    "resource.aws_batch_compute_environment.test.compute_resources.type": [
+        "EC2"
+    ],
+    "resource.aws_batch_compute_environment.test.service_role": [
+        "aws_iam_role.batch_service.arn"
+    ],
+    "resource.aws_batch_compute_environment.test.type": [
+        "UNMANAGED"
+    ],
+    "resource.aws_batch_compute_environment.sample.compute_environment_name": [
+        "sample"
+    ],
+    "resource.aws_batch_compute_environment.sample.compute_resources.max_vcpus": [
+        16
+    ],
+    "resource.aws_batch_compute_environment.sample.compute_resources.security_group_ids[0]": [
+        "aws_security_group.sample.id"
+    ],
+    "resource.aws_batch_compute_environment.sample.compute_resources.subnets[0]": [
+        "aws_subnet.sample.id"
+    ],
+    "resource.aws_batch_compute_environment.sample.compute_resources.type": [
+        "FARGATE"
+    ],
+    "resource.aws_batch_compute_environment.sample.service_role": [
+        "aws_iam_role.aws_batch_service_role.arn"
+    ],
+    "resource.aws_batch_compute_environment.sample.type": [
+        "MANAGED"
+    ],
+    "resource.aws_batch_compute_environment.sample.depends_on[0]": [
+        "aws_iam_role_policy_attachment.aws_batch_service_role"
+    ],
+    "data.aws_iam_policy_document.test.statement.sid": [
+        "DevAccountAccess",
+        "OrganizationAccess"
+    ],
+    "data.aws_iam_policy_document.test.statement.effect": [
+        "Allow"
+    ],
+    "data.aws_iam_policy_document.test.statement.actions[0]": [
+        "events:PutEvents",
+        "events:DescribeRule"
+    ],
+    "data.aws_iam_policy_document.test.statement.resources[0]": [
+        "arn:aws:events:eu-west-1:123456789012:event-bus/default",
+        "arn:aws:events:eu-west-1:123456789012:rule/*"
+    ],
+    "data.aws_iam_policy_document.test.statement.principals.type": [
+        "AWS"
+    ],
+    "data.aws_iam_policy_document.test.statement.principals.identifiers[0]": [
+        "123456789012",
+        "*"
+    ],
+    "resource.aws_cloudwatch_event_bus_policy.test.policy": [
+        "data.aws_iam_policy_document.test.json"
+    ],
+    "resource.aws_cloudwatch_event_bus_policy.test.event_bus_name": [
+        "aws_cloudwatch_event_bus.test.name"
+    ],
+    "data.aws_iam_policy_document.test.statement.actions[1]": [
+        "events:ListRules"
+    ],
+    "data.aws_iam_policy_document.test.statement.actions[2]": [
+        "events:ListTargetsByRule"
+    ],
+    "data.aws_iam_policy_document.test.statement.actions[3]": [
+        "events:ListTagsForResource"
+    ],
+    "data.aws_iam_policy_document.test.statement.resources[1]": [
+        "arn:aws:events:eu-west-1:123456789012:event-bus/default"
+    ],
+    "data.aws_iam_policy_document.test.statement.condition.test": [
+        "StringEquals"
+    ],
+    "data.aws_iam_policy_document.test.statement.condition.variable": [
+        "aws:PrincipalOrgID"
+    ],
+    "data.aws_iam_policy_document.test.statement.condition.values[0]": [
+        "aws_organizations_organization.example.id"
+    ],
+    "data.aws_iam_policy_document.test.statement[0].sid": [
+        "DevAccountAccess"
+    ],
+    "data.aws_iam_policy_document.test.statement[0].effect": [
+        "Allow"
+    ],
+    "data.aws_iam_policy_document.test.statement[0].actions[0]": [
+        "events:PutEvents"
+    ],
+    "data.aws_iam_policy_document.test.statement[0].resources[0]": [
+        "arn:aws:events:eu-west-1:123456789012:event-bus/default"
+    ],
+    "data.aws_iam_policy_document.test.statement[0].principals.type": [
+        "AWS"
+    ],
+    "data.aws_iam_policy_document.test.statement[0].principals.identifiers[0]": [
+        "123456789012"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].sid": [
+        "OrganizationAccess"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].effect": [
+        "Allow"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].actions[0]": [
+        "events:DescribeRule"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].actions[1]": [
+        "events:ListRules"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].actions[2]": [
+        "events:ListTargetsByRule"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].actions[3]": [
+        "events:ListTagsForResource"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].resources[0]": [
+        "arn:aws:events:eu-west-1:123456789012:rule/*"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].resources[1]": [
+        "arn:aws:events:eu-west-1:123456789012:event-bus/default"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].principals.type": [
+        "AWS"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].principals.identifiers[0]": [
+        "*"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].condition.test": [
+        "StringEquals"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].condition.variable": [
+        "aws:PrincipalOrgID"
+    ],
+    "data.aws_iam_policy_document.test.statement[1].condition.values[0]": [
+        "aws_organizations_organization.example.id"
+    ],
+    "resource.aws_config_organization_conformance_pack.example.name": [
+        "example"
+    ],
+    "resource.aws_config_organization_conformance_pack.example.input_parameter.parameter_name": [
+        "AccessKeysRotatedParameterMaxAccessKeyAge"
+    ],
+    "resource.aws_config_organization_conformance_pack.example.input_parameter.parameter_value": [
+        "90"
+    ],
+    "resource.aws_config_organization_conformance_pack.example.template_body": [
+        "Parameters:\n  AccessKeysRotatedParameterMaxAccessKeyAge:\n    Type: String\nResources:\n  IAMPasswordPolicy:\n    Properties:\n      ConfigRuleName: IAMPasswordPolicy\n      Source:\n        Owner: AWS\n        SourceIdentifier: IAM_PASSWORD_POLICY\n    Type: AWS::Config::ConfigRule"
+    ],
+    "resource.aws_config_organization_conformance_pack.example.depends_on[0]": [
+        "aws_config_configuration_recorder.example"
+    ],
+    "resource.aws_config_organization_conformance_pack.example.depends_on[1]": [
+        "aws_organizations_organization.example"
+    ],
+    "resource.aws_organizations_organization.example.aws_service_access_principals[0]": [
+        "config-multiaccountsetup.amazonaws.com"
+    ],
+    "resource.aws_organizations_organization.example.feature_set": [
+        "ALL"
+    ],
+    "resource.aws_config_organization_conformance_pack.example.template_s3_uri": [
+        "s3://${aws_s3_bucket.example.bucket}/${aws_s3_object.example.key}"
+    ],
+    "resource.aws_s3_bucket.example.bucket": [
+        "example"
+    ],
+    "resource.aws_s3_object.example.bucket": [
+        "aws_s3_bucket.example.id"
+    ],
+    "resource.aws_s3_object.example.key": [
+        "example-key"
+    ],
+    "resource.aws_s3_object.example.content": [
+        "Resources:\n  IAMPasswordPolicy:\n    Properties:\n      ConfigRuleName: IAMPasswordPolicy\n      Source:\n        Owner: AWS\n        SourceIdentifier: IAM_PASSWORD_POLICY\n    Type: AWS::Config::ConfigRule"
+    ],
+    "resource.aws_connect_contact_flow.test.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "resource.aws_connect_contact_flow.test.name": [
+        "Test"
+    ],
+    "resource.aws_connect_contact_flow.test.description": [
+        "Test Contact Flow Description"
+    ],
+    "resource.aws_connect_contact_flow.test.type": [
+        "CONTACT_FLOW"
+    ],
+    "resource.aws_connect_contact_flow.test.content": [
+        "jsonencode({Version:\"2019-10-30\",StartAction:\"12345678-1234-1234-1234-123456789012\",Actions:{Identifier:\"12345678-1234-1234-1234-123456789012\",Type:\"MessageParticipant\",Transitions:{NextAction:\"abcdef-abcd-abcd-abcd-abcdefghijkl\",Errors:,Conditions:},Parameters:{Text:\"Thanks for calling the sample flow!\"}},{Identifier:\"abcdef-abcd-abcd-abcd-abcdefghijkl\",Type:\"DisconnectParticipant\",Transitions:{},Parameters:{}}})"
+    ],
+    "resource.aws_connect_contact_flow.test.tags.Name": [
+        "Test Contact Flow"
+    ],
+    "resource.aws_connect_contact_flow.test.tags.Application": [
+        "Terraform"
+    ],
+    "resource.aws_connect_contact_flow.test.tags.Method": [
+        "Create"
+    ],
+    "resource.aws_connect_contact_flow.test.filename": [
+        "contact_flow.json"
+    ],
+    "resource.aws_connect_contact_flow.test.content_hash": [
+        "filebase64sha256(contact_flow.json)"
+    ],
+    "resource.aws_connect_contact_flow_module.example.instance_id": [
+        "aaaaaaaa-bbbb-cccc-dddd-111111111111"
+    ],
+    "resource.aws_connect_contact_flow_module.example.name": [
+        "Example"
+    ],
+    "resource.aws_connect_contact_flow_module.example.description": [
+        "Example Contact Flow Module Description"
+    ],
+    "resource.aws_connect_contact_flow_module.example.content": [
+        "jsonencode({Version:\"2019-10-30\",StartAction:\"12345678-1234-1234-1234-123456789012\",Actions:{Identifier:\"12345678-1234-1234-1234-123456789012\",Parameters:{Text:\"Hello contact flow module\"},Transitions:{NextAction:\"abcdef-abcd-abcd-abcd-abcdefghijkl\",Errors:,Conditions:},Type:\"MessageParticipant\"},{Identifier:\"abcdef-abcd-abcd-abcd-abcdefghijkl\",Type:\"DisconnectParticipant\",Parameters:{},Transitions:{}},Settings:{InputParameters:,OutputParameters:,Transitions:{DisplayName:\"Success\",ReferenceName:\"Success\",Description:\"\"},{DisplayName:\"Error\",ReferenceName:\"Error\",Description:\"\"}}})"
+    ],
+    "resource.aws_connect_contact_flow_module.example.tags.Name": [
+        "Example Contact Flow Module"
+    ],
+    "resource.aws_connect_contact_flow_module.example.tags.Application": [
+        "Terraform"
+    ],
+    "resource.aws_connect_contact_flow_module.example.tags.Method": [
+        "Create"
+    ],
+    "resource.aws_connect_contact_flow_module.example.filename": [
+        "contact_flow_module.json"
+    ],
+    "resource.aws_connect_contact_flow_module.example.content_hash": [
+        "filebase64sha256(contact_flow_module.json)"
+    ],
+    "resource.aws_datasync_task.example.destination_location_arn": [
+        "aws_datasync_location_s3.destination.arn"
+    ],
+    "resource.aws_datasync_task.example.name": [
+        "example"
+    ],
+    "resource.aws_datasync_task.example.source_location_arn": [
+        "aws_datasync_location_nfs.source.arn"
+    ],
+    "resource.aws_datasync_task.example.excludes.filter_type": [
+        "SIMPLE_PATTERN"
+    ],
+    "resource.aws_datasync_task.example.excludes.value": [
+        "/folder1|/folder2"
+    ],
+    "resource.aws_datasync_task.example.includes.filter_type": [
+        "SIMPLE_PATTERN"
+    ],
+    "resource.aws_datasync_task.example.includes.value": [
+        "/folder1|/folder2"
+    ],
+    "resource.aws_lb_listener.front_end.load_balancer_arn": [
+        "aws_lb.front_end.arn"
+    ],
+    "resource.aws_lb_listener.front_end.port": [
+        "443"
+    ],
+    "resource.aws_lb_listener.front_end.protocol": [
+        "TLS"
+    ],
+    "resource.aws_lb_listener.front_end.certificate_arn": [
+        "arn:aws:iam::187416307283:server-certificate/test_cert_rab3wuqwgja25ct3n4jdj2tzu4"
+    ],
+    "resource.aws_lb_listener.front_end.alpn_policy": [
+        "HTTP2Preferred"
+    ],
+    "resource.aws_lb_listener.front_end.default_action.type": [
+        "forward"
+    ],
+    "resource.aws_lb_listener.front_end.default_action.target_group_arn": [
+        "aws_lb_target_group.front_end.arn"
+    ],
+    "resource.aws_sns_topic.user_updates.name": [
+        "user-updates-topic",
+        "user-updates-topic.fifo"
+    ],
+    "resource.aws_sns_topic.user_updates.delivery_policy": [
+        "{\n  \"http\": {\n    \"defaultHealthyRetryPolicy\": {\n      \"minDelayTarget\": 20,\n      \"maxDelayTarget\": 20,\n      \"numRetries\": 3,\n      \"numMaxDelayRetries\": 0,\n      \"numNoDelayRetries\": 0,\n      \"numMinDelayRetries\": 0,\n      \"backoffFunction\": \"linear\"\n    },\n    \"disableSubscriptionOverrides\": false,\n    \"defaultThrottlePolicy\": {\n      \"maxReceivesPerSecond\": 1\n    }\n  }\n}"
+    ],
+    "resource.aws_sns_topic.user_updates.fifo_topic": [
+        true
+    ],
+    "resource.aws_sns_topic.user_updates.content_based_deduplication": [
+        true
+    ],
+    "resource.aws_timestreamwrite_database.example.database_name": [
+        "database-example"
+    ],
+    "resource.aws_timestreamwrite_database.example.kms_key_id": [
+        "aws_kms_key.example.arn"
+    ],
+    "resource.aws_timestreamwrite_database.example.tags.Name": [
+        "value"
+    ],
+    "resource.aws_timestreamwrite_table.example.database_name": [
+        "aws_timestreamwrite_database.example.database_name"
+    ],
+    "resource.aws_timestreamwrite_table.example.table_name": [
+        "example"
+    ],
+    "resource.aws_timestreamwrite_table.example.retention_properties.magnetic_store_retention_period_in_days": [
+        30
+    ],
+    "resource.aws_timestreamwrite_table.example.retention_properties.memory_store_retention_period_in_hours": [
+        8
+    ],
+    "resource.aws_timestreamwrite_table.example.tags.Name": [
+        "example-timestream-table"
+    ]
+}

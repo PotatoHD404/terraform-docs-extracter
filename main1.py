@@ -20,8 +20,8 @@ def parse_terraform_file(file_path):
 
 
 def main():
-    hcl_arr = parse_terraform_file('./results/yandex/1.json')
-    with open("./results/yandex/2.json", 'w', encoding='utf-8') as output_file:
+    hcl_arr = parse_terraform_file('./results/aws/1.json')
+    with open("./results/aws/2.json", 'w', encoding='utf-8') as output_file:
         output_file.write(json.dumps(hcl_arr, indent=4))
 
 

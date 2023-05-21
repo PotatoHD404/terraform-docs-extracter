@@ -19,7 +19,7 @@ def flatten_dict(d, parent_key='', sep='.'):
 
 
 def main():
-    with open("./results/yandex/2.json", 'r', encoding='utf-8') as f:
+    with open("./results/aws/2.json", 'r', encoding='utf-8') as f:
         arr = json.load(f)
 
     flattened_arr = [flatten_dict(item) for item in arr]
@@ -33,7 +33,7 @@ def main():
             else:  # if key is not in the result, start a new list
                 result[key] = [value]
 
-    with open("./results/yandex/3.json", 'w', encoding='utf-8') as output_file:
+    with open("./results/aws/3.json", 'w', encoding='utf-8') as output_file:
         output_file.write(json.dumps(result, indent=4))
 
 
